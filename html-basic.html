@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Document</title>
+  <link href="https://cdn.bootcss.com/normalize/8.0.0/normalize.min.css" rel="stylesheet">
+  <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+<style>
+  body{
+    background-color: gray;
+    color: white;
+  }
+  dd{
+    padding:10px;
+  }
+  a{
+    color: silver;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1 >lorem</h1>
+  <h2 style="color:pink;">Lorem ipsum.</h2>
+  <h3 style="color:yellow;">Lorem ipsum dolor.</h3>
+  <p class="text-primary">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id maxime corrupti, nulla earum possimus vitae omnis odio pariatur officia! Odit ipsa alias labore nostrum sint ex non repellendus, doloremque et.</p>
+  <p class="text-success">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit quaerat sint commodi est itaque vero, incidunt, quisquam obcaecati iusto minus inventore voluptatum. Consequuntur, at sequi ut nihil fugit amet possimus.</p>
+  <a href="#">在新窗口打开京东 </a> 
+  <a href="#"> 点击给我发邮件</a> 
+  <a href="#"> 跳转到本页的底部</a> 
+  <a href="#">点我可以下载一个文件</a>
+  <br/>
+  <img class="img-circle" width="200" height="200" title="图片描述" src="https://drscdn.500px.org/photo/229389427/m%3D1170/v2?user_id=7012987&amp;webp=true&amp;sig=196fa0c161aa562478d08571764872f7d69a346c3c0b2e12aa00e2c6414eb28b" alt="图片加载失败">
+</div>
+<hr>
+<marquee behavior="" direction="">飘~~~</marquee>
+<div class="container">
+  <p>
+    <em>这几种强调</em> 
+    <strong> 有什么 区别呢？</strong> 
+    <u> 这个呢？</u> 
+    <em> 这个呢？</em>
+  </p>
+</div>
+<hr>
+<div class="container">
+  <p>下面是一段javascript代码，最合适用何种标签表示呢？</p>
+  <pre>
+    <code>
+      function a(){
+      return 8
+    }
+    </code>
+  </pre>
+</div>
+<hr>
+<div class="container">
+  <ol class="list-group">
+    <li >小学
+      <ul>
+        <li>一年级
+          <ul>
+            <li>上学期</li>
+            <li>下学期</li>
+          </ul>
+        </li>
+        <li>二年级</li>
+        <li>三年级</li>
+      </ul>
+    </li>
+    <li>中学</li>
+    <li>大学</li>
+  </ol>
+</div>
+<hr>
+<div class="container">
+  <dl>
+    <dt>班级</dt>
+      <dd>三年二班</dd>
+    <dt>老师</dt>
+      <dd>张老师</dd>
+      <dd>李老师</dd>
+      <dd>王老师</dd>
+    <dt>学生</dt>
+      <dd>小明</dd>
+      <dd>豆豆</dd>
+  </dl>
+</div>
+<hr>
+<div class="container" >
+  <h2>Google搜索</h2>
+  <form class="form-inline">
+    <input type="text" value="请输入想要查询的内容" class="form-control"><button class="btn btn-default">在新窗口打开</button>
+  </form>
+</div>
+<hr>
+<div class="container">
+  <h2>个人信息调查表</h2>
+  <form action="" >
+    <div class="form-group">
+      性别<input type="radio" id="male"><label for="male">男</label>
+          <input type="radio" id="male"><label for="male">女</label>
+    </div>
+    <div class="form-group">
+      <label for="">年龄</label>
+      <select name="" id="" class="form-control">
+        <optgroup label="young man">
+          <option value="">1-6ages</option>
+          <option value="">6-12ages</option>
+        </optgroup>
+        <optgroup label="adult">
+          <option value="">23</option>
+          <option value="">34</option>
+        </optgroup>
+        <optgroup label="old man">
+          <option value="">44</option>
+          <option value="">44</option>
+        </optgroup>
+      </select>
+    </div>
+    <div class="form-group">
+      <input type="date" class="form-control">
+    </div>
+    <div class="form-group">
+      <input type="time"class="form-control">
+    </div>
+    <div class="form-group">
+      <input type="file" class="form-control">
+    </div>
+    <div class="form-group">
+      <input type="color" >
+    </div>
+    <div class="form-group">
+      <input type="textarea" placeholder="</textarea>" cols="30" rows="10">
+    </div>
+  </form>
+</div>
+<hr>
+<div class="container">
+  <form action="" border=1>
+    <fieldset disabled="">
+      <legend>这里面的全都禁用了</legend>
+      <input type="text">
+      <input type="text">
+      <input type="text">
+     </fieldset>
+     <div style="padding-top:10px;">
+     <buttom class="btn btn-default">提交</buttom>
+     <buttom class="btn btn-default"s>重置</buttom>
+     </div>
+  </form>
+</div>
+<hr>
+<div class="container">
+  <table style="color:black;" class="table table-bordered table-hover">
+  <caption style="color:pink;">货品列表</caption>
+  <thead>
+    <tr>
+      <td>编号</td>
+      <td>品名</td>
+      <td>进价</td>
+      <td>出价</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>001</td>
+      <td>苹果</td>
+      <td rowspan="2">5</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <td>001</td>
+      <td>桔子</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <td>001</td>
+      <td>香蕉</td>
+      <td>5</td>
+      <td>8</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td>001</td>
+      <td>山竹</td>
+      <td>5</td>
+      <td>8</td>
+    </tr>
+  </tfoot>
+  </table>
+</div>
+<hr>
+<div class="container">
+  <img class="img-thumbnail" title="image title" src="https://drscdn.500px.org/photo/174778125/m%3D1170_k%3D1/2841ccf2a3720e8e794a6a6930f6ff2c" width=300 usemap="#somemap" alt="">
+  <map name="somemap">
+    <area shape="rect" coords="55,108,205,200" href="https://www.mi.com/" alt="ieksoef" title="abc" target="_blank">
+    <area shape="circle" coords="133,262,90" href="" alt="">
+    <area shape="poly" coords="57,82,8,265,163,397,225,256,187,83" href="" alt="">
+  </map>
+</div>
+<hr>
+<div class="container">
+  <a href="https://www.mi.com" target="frame1">点击我会在下面的frame里打开小米商场，但为什么打不开呢？</a>
+  <br>
+  <iframe class="img-rounded" src="https://nodejs.org" name="frame1" frameborder="1"></iframe>
+
+  <div>
+    怎样&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在这两个字之间空这么大呢？
+    <br>
+    怎样在页面中显示下面的内容呢？
+    <br>
+    &lt;span>&lt;/span>
+  </div>
+</div>
+</body>
+</html>
