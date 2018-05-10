@@ -1,0 +1,67 @@
+*{
+  margin:0px;
+  padding:0px;
+}
+body{
+  background-image: url(02.jpg);
+  background-size:cover;
+}
+.header{
+  background-color: black; 
+}
+.header p{
+  color:white;
+  padding-left: calc(50% - 300px);
+  padding-right: calc(50% - 300px);
+}
+main{
+  width:600px;
+  margin:0 auto;
+}
+main .first{
+  padding:10px;
+}
+main .second .ul .li1{
+  width:180px;
+  border:3px groove black;
+  background-color: pink;
+  margin:20px;
+  text-align: center;
+}
+main .second .ul .li1:nth-child(n+5):nth-child(-n+8){
+  margin-left: 230px;
+}
+main .second .ul .li1:nth-child(n+9){
+  margin-left:440px;
+}
+main .second .ul .li1:nth-child(5){
+  margin-top:-212px;
+}
+main .second .ul .li1:nth-child(9){
+  margin-top:-212px;
+}
+main .second .ul .li1 .li{
+ width:auto;
+ border:3px groove gray;
+}
+main .second .ul .li1 .li:hover{
+  background-color: pink;
+  margin:0 -10px;
+}
+main .third ul {
+  overflow: hidden;
+  
+}
+main .third  ul li{
+  border-bottom:1px dashed black;
+  list-style: none;
+  margin-bottom: -1px;
+}
+footer .footer{
+  background-color: violet;
+}
+footer .footer p{
+  margin:0 auto;
+  width:400px;
+  text-align:center;
+}
