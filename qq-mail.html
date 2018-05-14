@@ -1,43 +1,43 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Document</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
   <style>
-    .div1{
-      background-color: black;
-      width:100%;
-      border:2px solid black;
+    html{
+      height:100%;
+    }
+  
+    body{
+      height:100%;
+      margin:0px;
+      padding:0px;
+    }
+    header{
+      box-sizing:border-box;
       height:100px;
-    }
-    .div2{
-      background-color: gray;
+      border-bottom:2px solid black;
+      background-color:pink;
+    } 
+    aside{
+      box-sizing:border-box;
       width:220px;
-      border:2px black groove;
-      height: 459px;
+      border-right:2px solid black;
+      height: calc(100% - 100px);
+      background-color:pink;
     }
-    .div3{
-      background-color: silver;
-      float: right;
-      width:calc(100% - 228px);
-      border:2px black ridge;
-      margin-top:-463px;
-      height: 459px;
+    main{
+      height: calc(100% - 100px);
+      margin-left:220px;
+      background-color:yellow;
+      margin-top: calc(-100vh + 100px)
     }
-
   </style>
 </head>
 <body>
-  <section>
-    <div class="div1">
-      
-    </div>
-    <div class="div2">
-      
-    </div>
-    <div class="div3">
-      
-    </div>
-  </section>
+  <header>header</header>
+  <aside>aside</aside>
+  <main>main</main>
 </body>
 </html>
