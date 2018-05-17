@@ -1,0 +1,18 @@
+.div1{
+  background-image: url(https://www.google.com.hk/images/nav_logo242_hr.png);
+  width:85px;
+  height:58px;
+  background-position:-20px 0px ;
+}
+.div2{
+  background-image: url(https://www.google.com.hk/images/nav_logo242_hr.png);
+  width:40px;
+  height: 58px;
+  background-position: -105px 0;
+}
+.div3{
+  background-image: url(https://www.google.com.hk/images/nav_logo242_hr.png);
+  width: 39px;
+  height: 58px;
+  background-position: -193px 0;
+}
