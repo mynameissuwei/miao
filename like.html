@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    body{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: black;
+    }
+    input{
+      display:none ;
+    }
+    label{
+      text-indent: -99999px;
+      background-image: url(twitter.png);
+      width: 100px;
+      height: 100px;
+      background-position: 0px 0px;
+      background-repeat: no-repeat;
+    }
+    input:checked + label{
+      background-position: -2801px 0px;
+      transition:all 500ms steps(28);
+    }
+  </style>
+</head>
+<body>
+  <input type="checkbox" id="like">
+  <label for="like">on/off</label>
+</body>
+</html>
