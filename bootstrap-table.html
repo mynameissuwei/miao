@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    .container{
+      padding-left: 15px;
+      padding-right: 15px;
+      margin: 0 auto;
+    }
+    html{
+      box-sizing: border-box;
+    }
+    * , *:before , *:after{
+      box-sizing: inherit;
+    }
+    body{
+      background-color: #FFFFFF;
+    }
+    .table{
+      width: 100%;
+      max-width: 100%;
+      margin-bottom: 20px;
+      border:1px solid #ddd;
+      border-collapse: collapse;
+      border-spacing: 0px;
+    }
+    .table > thead > tr > td{
+      border-bottom-width: 2px;
+      padding: 8px;
+      vertical-align: top;
+      line-height: 1.42857143;
+    }
+    .table > tbody > tr >td {
+      padding: 8px;
+      vertical-align: top;
+      line-height: 1.42857143;
+    }
+    .table > tfoot > tr >td{
+      padding: 8px;
+      vertical-align: top;
+      line-height: 1.42857143;
+    }
+    .table > tbody > tr:nth-child(odd){
+      background-color: rgba(236,236,236);
+    }
+    .table > tbody > tr:hover{
+      background-color:silver;
+         } 
+    /**the second task**/
+    .input-group{
+      display: inline-table;
+      border-collapse: collapse;
+      border-spacing: none;
+      border-radius: 5px;
+      width: 100%;
+    }
+    .input-group-addon{
+      display: table-cell;
+      padding: 6px 12px;
+      border-radius: 5px;
+      background-color: #eee;
+      color: #555;
+      border:1px solid #ddd;
+      font-size: 14px;
+      width: 1%;
+    }
+    .form-control{
+      display: table-cell;
+      width: 100%;
+      border: 1px solid #ddd;
+      padding:6px 12px;
+      height:37px;
+      font-size: 14px;
+    }
+    col{
+      width:10%;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+  <table class="table" border="1" > 
+    <col>
+    <thead>
+      <tr>
+        <td>first</td>
+        <td>lorem</td>
+        <td>lorem</td>
+        <td>lorem</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>second</td>
+        <td>lorem</td>
+        <td>lorem</td>
+        <td>lorem</td>
+      </tr> 
+       <tr>
+        <td>third</td>
+        <td>lorem</td>
+        <td>lorem</td>
+        <td>lorem</td>
+      </tr> 
+       <tr>
+        <td>fourth</td>
+        <td>lorem</td>
+        <td>lorem</td>
+        <td>lorem</td>
+      </tr> 
+       <tr>
+        <td>fifth</td>
+        <td>lorem</td>
+        <td>lorem</td>
+        <td>lorem</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td>sixth</td>
+        <td>lorem</td>
+        <td>lorem</td>
+        <td>lorem</td>
+      </tr>
+    </tfoot>
+  </table>
+  </div>
+  <!--the second task-->
+  <div class="input-group">
+    <div class="input-group-addon">@@@@@@</div>
+    <input type="text" class="form-control" placeholder="username" >
+  </div>
+  <hr>
+  <div class="input-group">
+    <input type="text" class="form-control" placeholder="Recipient's username" >
+    <div class="input-group-addon">@examfsldkfjsdlfkple.com</div>
+  </div>
+</body>
+</html>
