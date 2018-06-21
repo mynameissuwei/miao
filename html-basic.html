@@ -156,7 +156,7 @@
 </div>
 <hr>
 <div class="container">
-  <table style="color:black;" class="table table-bordered table-hover">
+  <table style="color:black;" class="table table-striped">
   <caption style="color:pink;">货品列表</caption>
   <thead>
     <tr>
@@ -217,6 +217,17 @@
     <br>
     &lt;span>&lt;/span>
   </div>
+  <form class="form-inline">
+  <div class="form-group">
+    <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
+    <div class="input-group">
+      <div class="input-group-addon">$</div>
+      <input type="text" class="form-control" id="exampleInputAmount" placeholder="Amount">
+      <div class="input-group-addon">.00</div>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Transfer cash</button>
+  </form>
 </div>
 </body>
 </html>

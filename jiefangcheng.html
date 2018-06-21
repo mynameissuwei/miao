@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script>
+    //求一元二次方程的值
+    var a=Number(prompt("please input a"));//让用户输入a的数值。
+    var b=Number(prompt("please input b"));//让用户输入b的数值。
+    var c=Number(prompt("please input c"));//让用户输入c的数值。
+    var s_delta=Math.sqrt(b*b-4*a*c);
+    var x1;
+    var x2;
+    //大于0的时候，该方程有2个解
+    if(s_delta>0){
+      x1=(-b+s_delta)/(2*a);
+      x2=(-b-s_delta)/(2*a);
+      alert(x1);
+      alert(x2);
+    }else if(s_delta==0){       //等于0时，该方程有一个解
+      x1=(-b+s_delta)/(2*a);
+      alert(x1);
+      alert(x2);
+    } else{    //当小于0的时候，方程无实数根，但有2个共轭复根
+      var add="+";
+      var substract="-";
+      var F_num=(-b)/(2*a);
+      var F_num1=String(F_num);//将(-b)/(2*a)  数值 转化为字符串形式。
+      var i="i";
+      var S_num1=4*a*c-b*b;
+      var S_num2=Math.sqrt(S_num1);
+      var S_num3=S_num2/2*a;
+      var S_num4=S_num3+i; //该值为((Math.sqrt(4*a*c-b*b))/(2*a))*i 形式为字符串形式。
+      x1=F_num1+add+S_num4;
+      x2=F_num1+substract+S_num4;
+      alert(x1);
+      alert(x2);
+    }
+    //一元二次方程
+  </script>
+
+  <script type="xxxxx">
+    //求二元一次方程组的值。
+
+
+    var a1=Number(prompt("please enter a1"));//输入值。
+    var b1=Number(prompt("please enter b1"));//输入值。
+    var c1=Number(prompt("please enter c1"));//输入值。
+    var a2=Number(prompt("please enter a2"));//输入值。
+    var b2=Number(prompt("please enter b2"));//输入值。
+    var c2=Number(prompt("please enter c2"));//输入值。
+    var x;//为该方程x的解
+    var y;//为该方程Y的解。
+    var vale=b1*a2-b2*a1;//条件判断值.
+    var vale1=c1*a2-c2*a1;//条件判断值.
+    if (vale!=0) {                        //该方程组有解。
+      x=(b1*c2-b2*c1)/(b1*a2-b2*a1);
+      y=(c1*a2-c2*a1)/(b1*a2-b2*a1);
+      alert(x);
+      alert(y);
+    } else if (vale==0||vale1==0) {      //该方程组有无数解。
+      alert("y有无数解，故该方程组有无数解");
+    } else {                             //该方程组无解。
+      alert("y无解，故方程组无解");
+    }
+
+    //the end.
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
