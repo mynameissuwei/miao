@@ -208,16 +208,16 @@
     }
   </script>
 
-  <script id="ch0104/05">
-    var x = Number(prompt("please input x"))
-    var y = Number(prompt("please input y"))
+  <script type="x" id="ch0104/05">
+    var x = parseInt(Number(prompt("please input x")))
+    var y = parseInt(Number(prompt("please input y")))
     if(x >= 0){
       if (x > y) {
-        console.log(" > ")
+        console.log(">")
       } else if (x = y) {
-        console.log(" = ")
+        console.log("=")
       } else {
-        console.log(" < ")
+        console.log("<")
       }
     } else {
       console.log("x >= 0")
@@ -447,8 +447,7 @@
   </script>
 
   <script type="x" id="ch0105/03">
-  var sample = Number(prompt("please input the number of sample,the number
-  is less than 100"));
+  var sample = Number(prompt("please input the number of sample"))
   var data = [];
   var sum = 0;
   for(i = 0; i < sample; i++){
@@ -459,8 +458,6 @@
   }
   sum = sum / data.length;
   console.log(sum.toFixed(4));
-
-
   </script>
 
   <script type="x" id="ch0105/04">
@@ -545,10 +542,10 @@
       sum3 = bronze[i] + sum3;
     }
     sum = sum1 + sum2 +sum3;
-    console.log("the number of gold is"+ sum1);
-    console.log("the number of silver is" + sum2);
-    console.log("the number of bronze is" + sum3);
-    console.log("the number of medal is" + sum);
+    console.log(sum1);
+    console.log(sum2);
+    console.log(sum3);
+    console.log(sum);
   </script>
 
   <script type="x" id="ch0105/08">
@@ -569,7 +566,7 @@
 
   </script>
 
-  <script type="x" id="ch0105/09">
+  <script id="ch0105/09">
     var a = Number(prompt("please input your number"));
     var b = Number(prompt("please input your number"));
     var length = 0;
@@ -581,8 +578,6 @@
     for(i = 1; i < d; i++){
       array[i] = array[i - 1] + 1;
     }
-    console.log(array);
-    debugger
     for(i = 0; i < array.length; i++){
       if(array [ i ] % 2 != 0 ){
         sum = array[ i ] + sum;
