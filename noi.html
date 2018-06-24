@@ -55,7 +55,7 @@
     console.log( c.toFixed(3) + "%")
   </script>
   
-  <script id="ch0103/07">
+  <script type="x" id="ch0103/07">
     var x = Number(prompt("please input x number"))
     var a = Number(prompt("please input a number"))
     var b = Number(prompt("please input b number"))
@@ -91,7 +91,7 @@
   <script type="x" id="ch0103/11">
     var a = Number(prompt("please input first number"))
     var b = Number(prompt("please input second Number"))
-    console.log( a % b )
+    console.log( (a % b).toFixed(4) )
   </script>
 
   <script type="x" id="ch0103/12">
@@ -111,7 +111,7 @@
     b = (a - a % 100)/100//hundred
     c = a % 10 //single
     d =  (a % 100 - c)/10  //ten
-    console.log(c * 100 + d * 10 + b)
+    console.log(d.toString() + c.toString() + b.toString())
   </script>
 
   <script type="x" id="ch0103/14">
@@ -152,7 +152,7 @@
     var a1 = Number(prompt("please input a1"))
     var a2 = Number(prompt("please input a2"))
     var n = Number(prompt("please input n"))
-    console.log( a1 * ( n - 1 )  * ( a2 - a1 ))
+    console.log( a1 + ( n - 1 )  * ( a2 - a1 ))
   </script>
   
   <script type="x" id="ch0103/19">
@@ -208,15 +208,19 @@
     }
   </script>
 
-  <script type="x" id="ch0104/05">
+  <script id="ch0104/05">
     var x = Number(prompt("please input x"))
     var y = Number(prompt("please input y"))
-    if (x > y) {
-      console.log(" > ")
-    } else if (x = y) {
-      console.log(" = ")
+    if(x >= 0){
+      if (x > y) {
+        console.log(" > ")
+      } else if (x = y) {
+        console.log(" = ")
+      } else {
+        console.log(" < ")
+      }
     } else {
-      console.log(" < ")
+      console.log("x >= 0")
     }
   </script>
 
@@ -413,7 +417,7 @@
     console.log( n - Math.ceil(y / x))
   </script>
 
-  <script type="x" id="0105/01">
+  <script type="x" id="ch0105/01">
     var numberOfStudent = Number(prompt("please input the number of student,the number is between 1 and 100"));
     var ageOfStudent = [];
     var sum = 0;
@@ -428,7 +432,7 @@
     console.log(value.toFixed(2));
   </script>
 
-  <script type="x" id="0105/02">
+  <script type="x" id="ch0105/02">
     var restOfMoneny = []
     var sum = 0
     for(i = 0; i < 12; i++){
@@ -442,7 +446,7 @@
     console.log("$" + sum.toFixed(2))
   </script>
 
-  <script type="x" id="0105/03">
+  <script type="x" id="ch0105/03">
   var sample = Number(prompt("please input the number of sample,the number
   is less than 100"));
   var data = [];
@@ -459,7 +463,7 @@
 
   </script>
 
-  <script type="x" id="0105/04">
+  <script type="x" id="ch0105/04">
 
     var sample = Number(prompt("please input the integer"));
     var data = [];
@@ -476,7 +480,7 @@
 
    </script>
 
-   <script type="x" id="0105/05">
+   <script type="x" id="ch0105/05">
 
    var sample = Number(prompt("please input the number"));
    var data = [];
@@ -494,7 +498,7 @@
    
    </script> 
 
-   <script type="x" id="0105/06">
+   <script type="x" id="ch0105/06">
    var sample = Number(prompt("please input the number"));
    var data = [];
    var max;
@@ -517,7 +521,7 @@
    console.log(value);
    </script>
     
-  <script type="x" id="0105/07">
+  <script type="x" id="ch0105/07">
     var day = Number(prompt("please input the data of day"));
     var gold = [];
     var silver = [];
@@ -547,7 +551,7 @@
     console.log("the number of medal is" + sum);
   </script>
 
-  <script type="x" id="0105/08">
+  <script type="x" id="ch0105/08">
    var polygon = Number(prompt("please input the side of polygon"));
    var polygon1 = polygon - 1;
    var theSumOfPolygon = (polygon - 2) * 180;
@@ -565,7 +569,7 @@
 
   </script>
 
-  <script type="x" id="0105/09">
+  <script type="x" id="ch0105/09">
     var a = Number(prompt("please input your number"));
     var b = Number(prompt("please input your number"));
     var length = 0;
