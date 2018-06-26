@@ -598,7 +598,167 @@
     }
   </script>
   
-  <script type="xx" id="sort" sample-input="4 1 7" sample-output="1 4 7" comment="输入三个数，把此三个数按升序输出">
+  <script type="x" id="ch0105/10">
+    var m = parseInt(Number(prompt('请输入m值')))
+    var n = parseInt(Number(prompt('请输入n值')))
+    var count = 0
+    if ((m > 0 && m < n) && (n > m && n < 1000)) {
+        for (var i = m; i <= n; i++) {
+            if (i % 17 == 0) {
+                count += i
+            }
+        }
+    } else {
+        console.log('0 <= m <= n <= 300 ')
+    }
+    console.log(count)
+  </script>
+
+  <script type="x" id="ch0105/11">
+    var k = parseInt(Number(prompt('输入1<k<100')))
+    var a = 0
+    var b = 0
+    var c = 0
+    for (var i = 0; i < k; i++) {
+        var n = parseInt(Number(prompt('请输入1<=n<=10')))
+        if (n == 1) {
+            a += 1
+        } else if (n == 5) {
+            b += 1
+        } else if (n == 10) {
+            c += 1
+        }
+    }
+    console.log(a)
+    console.log(b)
+    console.log(c)
+  </script>
+
+  <script type="x" id="ch0105/12">
+    var n = parseInt(Number(prompt('输入0<n<=100')))
+    var m = parseInt(Number(prompt('输入指定数字')))
+    var count = 0
+    for (var i = 0; i < n; i++) {
+        var a = parseInt(Number(prompt('输入a')))
+        if (a == m) {
+            count += 1
+        }
+    }
+    console.log(count)
+</script>
+
+  <script type="x" id="ch0105/13">
+    var a = parseInt(Number(prompt('输入-1000000 <= a <= 1000000')))
+    var n = parseInt(Number(prompt('输入1 <= n <= 10000')))
+    console.log(a ** n)
+  </script>
+
+  <script type="x" id="ch0105/14">
+    var a = parseInt(Number(prompt('输入1 <= a <= 100')))
+    var n = parseInt(Number(prompt('输入1 <= n <= 100')))
+    for (var i = 0; i < n; i++) {
+        a += a * 0.001
+    }
+    console.log(a.toFixed(4))
+  </script>
+
+  <script type="x" id="ch0105/15">
+    var r = parseInt(Number(prompt('输入0到20之间的整数')))
+    var m = parseInt(Number(prompt('100到1,000,000之间的整数')))
+    var y = parseInt(Number(prompt('输入范围0到400')))
+    for (var i = 0; i < y; i++) {
+        m = m * (1 + (r / 100))
+    }
+    console.log(Math.floor(m))
+  </script>
+
+  <script type="x" id="ch0105/16">
+    var n = parseInt(Number(prompt('输入10 <= N <= 50')))
+    var k = parseInt(Number(prompt('1 <= K <= 200')))
+    var num = 200
+    var count = n
+    for (var i = 2; i <= 20; i++) {
+        count += n
+        num *= (1 + k / 100)
+        if (count >= num) {
+            break
+        }
+    }
+    if (i <= 20) {
+        console.log(i)
+    } else {
+        console.log('Impossible')
+    }
+  </script>
+
+  <script type="x" id="ch0105/17">
+    var k = parseInt(Number(prompt('输入1 <= k <= 46')))
+    var a = 1
+    var b = 1
+    var n = 0
+
+    if (k == 1 || k == 2) {
+        console.log(1)
+    } else {
+        for (var i = 2; i < k; i++) {
+            n = a + b
+            a = b
+            b = n
+        }
+        console.log(n)
+    }
+  </script>
+
+  <script type="x" id="ch0105/18">
+    var n = parseInt(Number(prompt('输入1 < n <= 20')))
+
+    var x = 0
+    var y = 0
+    for (var i = 0; i < n; i++) {
+        var a = Number(prompt('n' + (i + 1) + '-1(<= 10000):'))
+        var b = Number(prompt('n' + (i + 1) + '-2:'))
+        if (i === 0) {
+            x = b / a
+        } else {
+            y = b / a
+            if (y - x > .05) {
+                console.log('better')
+            } else if (x - y > .05) {
+                console.log('worse')
+            } else {
+                console.log('same')
+            }
+        }
+    }
+  </script>
+
+  <script type="x" id="ch0105/19">
+    var n = Number(prompt('屋顶数n'))
+
+    var count = 0
+    for (var i = 0; i < n; i++) {
+        var a = Number(prompt('坐标位置'))
+        var b = Number(prompt('坐标位置'))
+        var c = Number(prompt('人数'))
+
+        count += (a / 50 + b / 50 * 2) + (c + c / 2)
+    }
+    console.log(Math.ceil(count))
+  </script>
+
+  <script type="x" id="ch0105/20">
+    var h = parseInt(Number(prompt('输入初始高度')))
+    var m = h
+    var n = h / 2
+    for (var i = 2; i <= 10; i++) {
+        m += 2 * n
+        n /= 2
+    }
+    console.log(m.toFixed(4))
+    console.log(n.toFixed(7))
+  </script>
+
+  <script type="x" id="sort" sample-input="4 1 7" sample-output="1 4 7" comment="输入三个数，把此三个数按升序输出">
     var f = prompt("please input the number")
     var a = Number(f)
     var b = (a - (a % 100)) / 100; //hundred
@@ -618,7 +778,24 @@
       console.log("" + d + "" + c + "" + b)
     }
   </script>
-
+  <script type="x" id="narcissistic " sample-input="153" sample-output="YES" comment="判断一个数是否为水仙花数">
+    
+  </script>
+  <script type="x" id="narcissistics" sample-input="" sample-output="" comment="找出100到10000以内所有的水仙花数">
+    
+  </script>
+  <script type="x" id="palindrom" sample-input="12321" sample-output="YES" comment="判断一个非负整数是否为回文数字">
+    
+  </script>
+  <script type="x" id="weekday" sample-input="2018 6" sample-output="5" comment="输入年份与月份，给出该年该月的第一天是星期几">
+    
+  </script>
+  <script type="x" id="complete-number" sample-input="6" sample-output="YES" comment="判断一个数是否为完全数">
+    
+  </script>
+  <script type="x" id="complete-numbers" sample-input="" sample-output="" comment="输出10000以内所有的完全数">
+    
+  </script>
   <script type="x" id="prime" sample-input="7" sample-output="YES" comment="判断一个数是否为素数">
     var num = Number(prompt("please input the number"))
      function isPrimeNumber(num){
@@ -630,6 +807,22 @@
                console.log("YES")
            }
      isPrimeNumber(num);
+  </script>
+  <script type="x" id="primes" sample-input="" sample-output="" comment="输出100以内所有的素数">
+    
+  </script>
+  <script type="x" id="itob" sample-input="123" sample-output="123" comment="数字转换成字符串">
+    var a =Number(prompt("please input the Number"));
+    console.log(a.toString());
+  </script>
+  <script type="x" id="lcf&lcm" sample-input="12 9" sample-output="36 3" comment="给定两个数，求它们的最小公倍数和最大公约数">
+    
+  </script>
+  <script type="x" id="7" sample-input="" sample-output="" comment="敲7">
+    
+  </script>
+  <script type="x" id="sqrt" sample-input="2" sample-output="1.414" comment="不使用Math.sqrt，求一个非负数的平方根，至少精确到小数点后3位">
+    
   </script>
 
 
