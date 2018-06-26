@@ -566,7 +566,7 @@
 
   </script>
 
-  <script id="ch0105/09">
+  <script type="x" id="ch0105/09">
     var a = Number(prompt("please input your number"));
     var b = Number(prompt("please input your number"));
     var length = 0;
@@ -587,3 +587,49 @@
     var value = sum / length;
     console.log(sum);
   </script>
+
+  <script type="x" id="ch0105/10">
+    var m = Number(prompt("please input your number"));
+    var n = Number(prompt("please input your number"));
+    var d = m - n;
+    var array = [];
+    for(i = 1; i < d; i++){
+      array[i] = array[i - 1] + 1;
+    }
+  </script>
+  
+  <script type="xx" id="sort" sample-input="4 1 7" sample-output="1 4 7" comment="输入三个数，把此三个数按升序输出">
+    var f = prompt("please input the number")
+    var a = Number(f)
+    var b = (a - (a % 100)) / 100; //hundred
+    var c = a % 10; //single
+    var d = ((a % 100) - c) / 10 //ten
+    if(b > c && b > d && c > d) {
+      console.log("" + b + "" + c + "" + d)
+    } else if(b > c && b > d && d > c) {
+      console.log("" + b + "" + d + "" + c)
+    } else if(c > b && c > d && b > d) {
+      console.log("" + c + "" + b + "" + d)
+    } else if(c > b && c > d && d > b) {
+      console.log("" + c + "" + d + "" + b)
+    } else if (d > b && d > c && b > c){
+      console.log("" + d + "" + b + "" + c)
+    } else {
+      console.log("" + d + "" + c + "" + b)
+    }
+  </script>
+
+  <script type="x" id="prime" sample-input="7" sample-output="YES" comment="判断一个数是否为素数">
+    var num = Number(prompt("please input the number"))
+     function isPrimeNumber(num){
+               for(j = 2; j < num; j++) {
+                   if(num % j == 0 ) {
+                      return;
+                   }
+               }
+               console.log("YES")
+           }
+     isPrimeNumber(num);
+  </script>
+
+
