@@ -45,7 +45,7 @@
     var a = Number(prompt("please input first number"));
     var b = Number(prompt("please input second number"));
     var c = a / b;
-    console.log( c.toFixed(9) );
+    console.log( c.toFixed(9) );x
   </script>
 
   <script type="x" id ="ch0103/06">
@@ -748,7 +748,7 @@
     console.log(n.toFixed(7))
   </script>
 
-  <script id="sort" sample-input="4 1 7" sample-output="1 4 7" comment="输入三个数，把此三个数按升序输出">
+  <script  type="xxxx" id="sort" sample-input="4 1 7" sample-output="1 4 7" comment="输入三个数，把此三个数按升序输出">
     var a = Number(prompt("please input the number"));
     var b = (a - (a % 100)) / 100; //hundred
     var c = a % 10; //single
@@ -779,12 +779,43 @@
   <script type="x" id="weekday" sample-input="2018 6" sample-output="5" comment="输入年份与月份，给出该年该月的第一天是星期几">
     
   </script>
-  <script type="x" id="complete-number" sample-input="6" sample-output="YES" comment="判断一个数是否为完全数">
-    
+
+  <script type = "x" id="complete-number" sample-input="6" sample-output="YES" comment="判断一个数是否为完全数">
+      var  n = Number(prompt("please input the number"));
+      var sum = 0;
+
+      for(i = 1; i < n;i++) {
+        if(n % i == 0) {
+          sum += i;
+        }
+      }
+
+      if(sum === n) {
+        console.log("YES")
+      } else {
+        //console.log("NO")
+      }
   </script>
+
   <script type="x" id="complete-numbers" sample-input="" sample-output="" comment="输出10000以内所有的完全数">
-    
+     for(x = 1;x < 10000; x++){
+        var  n = x;
+      var sum = 0;
+
+      for(i = 1; i < n;i++) {
+        if(n % i == 0) {
+          sum += i;
+        }
+      }
+
+      if(sum === n) {
+        console.log(n)
+      } else {
+        //console.log("NO")
+      }
+    }
   </script>
+
   <script type="x" id="prime" sample-input="7" sample-output="YES" comment="判断一个数是否为素数">
     var num = Number(prompt("please input the number"))
      function isPrimeNumber(num){
@@ -798,20 +829,3761 @@
      isPrimeNumber(num);
   </script>
   <script type="x" id="primes" sample-input="" sample-output="" comment="输出100以内所有的素数">
+    // function output(num) {
+    //   var a = 0;
+    //   if(num == 2) {
+    //     a = a + 1;
+    //     return;
+    //   }
+    //   for(i = 3; i < num; i++){
+    //     for(j = 2; j < i; j++){
+    //       if(i % j == 0){
+    //         a = a + 1;
+    //         break;
+    //       }
+    //     }
+    //   }
+    //   return((num-1)-(a + 1))
+    // }
+    // output(100);
+    var countPrimes = function(n) {
+     var a = 0;
+      if(n == 2) {
+        a = a + 1;
+        return;
+      }
+      for(i = 3; i < n; i++){
+        for(j = 2; j < i; j++){
+          if(i % j == 0){
+            a = a + 1;
+            break;
+          }
+        }
+      }
+      return((n-1)-(a + 1))
+    };
+    countPrimes(10)
+  </script>
+
+  <script  type="x" id="itob" sample-input="123" sample-output="123" comment="数字转换成字符串">
+    //var a =Number(prompt("please input the Number"));
+    //console.log(a.toString());
     
   </script>
-  <script type="x" id="itob" sample-input="123" sample-output="123" comment="数字转换成字符串">
-    var a =Number(prompt("please input the Number"));
-    console.log(a.toString());
-  </script>
+
   <script type="x" id="lcf&lcm" sample-input="12 9" sample-output="36 3" comment="给定两个数，求它们的最小公倍数和最大公约数">
-    
+    var m = 15
+    var n = 12
+
+    var min = Math.min(m,n)
+
+    for(var i = min; i > 0;i-) {
+    if(m % i === 0 && n % i ===0){
+      console.log(i)
+      break
+  }
+
+  var max = m < n ? n : m
+  for(var i = max; i<= m * n; i++) {
+    if(i % m === 0 && i % n ===0) {
+      console.log(i)
+      break
+    }
+  }
+  
   </script>
-  <script type="x" id="7" sample-input="" sample-output="" comment="敲7">
-    
+  <script type="xxx" id="7" sample-input="" sample-output="" comment="敲7">
+  for(var i = 1; i< 100;i++){
+    n = i
+    var n = 672 
+    if (n % 7 === 0) {
+      console.log("yes")
+    } else {
+      while(n > 0) {
+        digit = n% 10
+        if(digit === 7) {
+          console.log(n)
+          break
+        }
+        n 
+      }
+    }d
   </script>
+
   <script type="x" id="sqrt" sample-input="2" sample-output="1.414" comment="不使用Math.sqrt，求一个非负数的平方根，至少精确到小数点后3位">
-    
+   var c =  2 ;
+   var a = 1 ;
+   var b ;
+   while(b != Math.sqrt(2)) {
+      c = (c - a) / 2 ;
+      c = c + 1 ;
+      b = (c + a) / 2 
+   }
+  </script>
+
+  <script type="xxx">
+    var twoSum = function(nums, target) {
+      for(i = 0; i < nums.length; i++ ) {
+        for(j = i + 1; j < nums.length; j++) {
+          if(target == nums[i] + nums[j]) {
+            var array = [i,j];
+          }
+        }
+      }
+    };
+    twoSum([2,7,11,15],9);
+  </script>
+
+  <script type="xxx">
+    var removeElement = function(nums, val) {
+      for(i = 0 ; i < nums.length ; i++) {
+        if(nums[i] == val) {
+          nums.splice(i,1);
+          i--;
+        }
+      }
+      return nums;
+    };
+    removeElement([0,1,2,2,3,0,4,2],2)
+  </script>
+
+  <script type="xxx">
+    var searchInsert = function(nums, target) {
+      for(i = 0; i < nums.length; i++) {
+        if(nums[i] == target){
+          return i;
+        } 
+      }
+      nums.push(target)
+      function compare(value1, value2) { 
+        if (value1 < value2) {
+          return -1;
+        } else if (value1 > value2) { 
+          return 1;
+        } else {
+          return 0;
+        }
+      }
+      nums.sort(compare)
+      return nums.indexOf(target);  
+    };
+  </script>
+
+  <script type="x">
+    var merge = function(nums1, m, nums2, n) {
+     nums1 = nums1.concat(nums2)
+      function compare(value1, value2) { 
+        if (value1 < value2) {
+          return -1;
+        } else if (value1 > value2) { 
+          return 1;
+        } else {
+          return 0;
+        }
+      }
+      nums1.sort(compare)
+    };
+    merge([1,2,3],3,[2,5,6],3)
+  </script>
+
+  <script type="xxx">
+   var merge = function(nums1,nums2,n){
+    for(i = 0; i < nums2.length; i++) {
+      nums1.push(nums2[i]);
+    }
+    function compare(value1, value2) { 
+      if (value1 < value2) {
+        return -1;
+      } else if (value1 > value2) { 
+        return 1;
+      } else {
+        return 0;
+      }
+    }
+    nums1.sort(compare)
+   }
+   merge([1,2,3],[2,3,1])
+  </script>
+
+  <script type="xxx">
+    var merge = function(nums1,m,nums2,n){
+      for(i = m; i < m + n; i++) {
+          for(j = 0 ; j < m - 2 ; j++) {
+            nums1[i] = nums2[j] ; 
+          } 
+      }
+      function compare(value1, value2) { 
+        if (value1 < value2) {
+          return -1;
+        } else if (value1 > value2) { 
+          return 1;
+        } else {
+          return 0;
+        }
+      }
+      nums1.sort(compare)
+     }
+     merge([0],0,[1],1)
+  </script>
+
+  <script type="xxx">
+
+    var trailingZeroes = function(n) {
+      var count = 0;
+      function factorial (n) {
+            if(n <= 1) {
+                return 1;
+            } else {
+                return n * factorial(n - 1)
+            }
+        }
+      for(i = 10 ; i < factorial(n) ; i = i *10) {
+          if(factorial(n) % i == 0){
+              count = count + 1;
+          } else {
+            return 0 ;
+          }
+      }
+          return count;
+      };
+      trailingZeroes(5);
+  </script>
+
+  <script type="x">
+    var countPrimes = function(n) {
+     var a = 0;
+      if(n == 0) {
+        return 0 ;
+      }
+      if(n == 2) {
+        a = a + 1;
+        return;
+      }
+      for(i = 3; i < n; i++){
+        for(j = 2; j < i; j++){
+          if(i % j == 0){
+            a = a + 1;
+            break;
+          }
+        }
+      }
+      return((n-1)-(a + 1))
+};
+  </script>
+
+  <script type="x">
+  function sum(n ){
+    if(n == 1||n == 2) {
+         return true
+     }
+    for(i = 0; i < n * 3; i++){
+      n = n / 2 ;
+      if ( n / 2 == 1){
+          return true;
+      }
+    } 
+    return false;
+  }
+  sum(64)
+  </script>
+
+  <script type="x">
+    var addBinary = function(a, b) {
+      var a = parseInt("0b" + a,2)
+        var b = parseInt("0b" + b,2)
+        var c = a + b;
+        console.log(c);
+       
+    };
+
+    addBinary("11","1")
+  </script>
+
+  <script type="x">
+    var addBinary = function(a, b) {
+      var a = parseInt(a,2)
+      var b = parseInt(b,2)
+      var c = a + b;
+      var d = "" + c ;
+      var d.toString(2)
+      console.log(parseInt(d,2));
+    };
+    addBinary("11","1")
+    // for(i = 0;i < array[i].length; i++) {
+            //     if(array[i] != "3" && array[i] != "4" && array[i] != 7){
+            //         if(array[i] == "2" || array[i] == "5" || array[i] == "6" || array[i] == "9") {
+            //             count = count + 1;
+            //         }
+            //     }
+            // }
+  </script>
+
+  <script type="x">
+    function num (N) {
+
+        var array = [];
+        var count = 0;
+        var counter = 0;
+        var counter1 = 0;
+        for(i = 0; i < N; i++) {
+            array[i] = i + 1 ;
+            array[i] = array[i].toString();
+            array[i] = array[i].split('');
+        }
+        debugger
+        for(i = 0; i < N; i++) {
+          count = 0 ;
+          for(j = 0; j < array[i].length ; j++) {
+                 if(array[i][j] == "1" || array[i][j] == "0" || array[i][j] == "8") {
+                           count = count + 1; 
+                    if(count == array[i].length) {
+                      counter1 = counter1 + 1;
+                    }    
+                  }
+          }
+        }
+        for(i = 0; i < N; i++) {
+           for(u = 0 ; u < array[i].length; u++){
+                   if(array[i][u] == "3" || array[i][u] == "4" || array[i][u] == 7){
+                       counter = counter   + 1   ;
+                       break;
+                   }
+           }
+        }               
+        console.log( N - counter - counter1 )
+    }
+    num(857);
+  </script>
+
+  <script type="x">
+    function  sum(n) {
+        while(n % 2 == 0) {
+            n = n / 2;
+        }
+        while (n % 5 == 0) {
+            n = n / 5;
+        }
+        while (n % 3 == 0) {
+            n = n / 3;
+        }
+        if (n == 1) {
+            return(true)
+        } else {
+            return(false)
+        }   
+    }
+    sum()
+  </script>
+
+  <script type="x">
+      var isUgly = function(num) {
+        if(num == 0) {
+            return false;
+        }
+      for( ; ; ) {
+          if(num == 1) {
+              return true
+          }
+          if(num % 2 == 0) {
+              num = num / 2;
+              continue;
+          }
+          if(num % 3 == 0) {
+              num = num / 3;
+              continue;
+          }
+          if(num % 5 == 0) {
+              num = num / 5;
+              continue;
+          }
+          return false;
+      }
+    }
   </script>
 
 
+  <script type="x">
+  function sum(num){
+    var a = 1;
+    var b = 1;
+    var c = 1;
+    var d;
+    if(num == 1) {
+      return true;
+    }
+    for(i = 0; i < num; i++ ) {
+      d = Math.min(a,b,c)
+      a = d * 2;
+      b = d * 3;
+      c = d * 5;
+      if(num == a || num ==b || num ==c ) {
+        return true;
+      }
+    }
+    return false;
+  }
+  sum(9);
+  </script>
+
+  <script type="xxx">
+    var x = 4
+    var count = 0
+    while(count < 20) {
+      count++
+      x = x - (x * x - 2) / (2 * x)
+    }
+
+    // console.log(count)
+    console.log(x)
+  </script>
+
+  <script type="count width of number">
+    function numberWidth (n) {
+      debugger
+      var w = 0 ;
+      var d 
+
+      do {
+        d = n % 10
+        w++
+        n = (n - d) / 10
+      } while(n > 0)
+
+      return w
+    }
+    numberWidth(123)
+  </script>
+
+  <script  type="xxx">
+
+    var a = 153 ;
+    function numberWidth(x) {
+      var d 
+      var counter = 0 ;
+
+      do {
+        d = x % 10 
+        x = (x - d) / 10
+        counter = counter + 1 ;  
+      }  while (x > 0)
+
+      return counter;
+    } 
+
+    function pow (x , n) {
+      var r = 1 ;
+      for(i = 0; i < n; i++) {
+        r = r * x
+      }
+
+      return  r
+    }
+
+    function process (x) {
+      var d ;
+      var sum = 0;
+      do {
+        d  = x % 10;
+        sum = pow(d , numberWidth(a) ) + sum 
+        x = (x - d) / 10
+      } while (x > 0)
+
+      return sum ;
+    }
+
+    function isWater (x) {
+      return  process(x) ===  x      
+    }
+
+    isWater(153)
+  </script>
+
+  <script type = "xxx">
+       var countPrimes = function(n) {
+        var count = 0 ;
+        for(i = 2 ; i < n ; i++) {
+            if(countPrimes1(i)) {
+                count = count + 1 ;
+            }
+        }
+        return count;
+
+ function countPrimes1(n) {
+     if(n < 2) {
+         return false ;
+     }
+      if(n == 2 || n ==3) {
+          return true
+      }
+      if ( n % 6 !== 1 && n % 6 !== 5) {
+          return false
+      }
+      var sqrtn = Math.sqrt(n)
+     for ( i = 2 ; i <=  sqrtn ; i++) {
+         if(n % i == 0) {
+             return false ;
+         }
+     }
+     return true ;
+ }
+    };
+  </script>
+
+
+  <script   type="happyNumber">
+    function numberWidth (n) {
+      var count = 0 ;
+      var d ;
+      do {
+        d = n % 10 ;
+        n  = (n - d) / 10 ;
+        count = count + 1 ;
+      }  while (n > 0)
+
+      return count ;
+    }
+    function happyNumber (n) {
+      var d = n.toString().split("")
+    }
+  </script>
+
+  <script type="xxx">
+    function getUpper(arr, key){
+  //获取某个元素最后出现位置 
+    var low = 0, high = arr.length - 1;
+    console.log(high);
+    var mid = Math.round((low + high) / 2);
+    console.log(mid);
+    /*其实是一个递归迭代*/ 
+    while(low <= high){
+        
+        if(arr[mid] <= key){
+           //当要查找的值比中位数大于等于时，把查找的低位限制为mid+1
+            low = mid + 1;
+        }else{
+           //当要找的值比 中位数小时，把查找的高位限制为mid-1 
+            high = mid - 1;  
+        }
+        mid = Math.round((low + high) / 2);
+               
+    } 
+  // 返回最后出现位置 
+    return high; 
+}
+ 
+function getLower(arr,key){//获取某个元素第一次出现位置 
+    var low = 0, high = arr.length - 1;
+    var mid = Math.round((low + high) / 2);
+    while(low <= high){      
+        //当要找的值比 中位数小于等于时，把查找的高位限制为mid+1 
+        if(arr[mid] >= key){
+            high = mid -1;
+        }else{
+          //当要找的值比 中位数大时，，把查找的低位限制为mid+1 
+            low = mid + 1;
+        }
+        mid = Math.round((low + high) / 2);       
+    }    
+    //返回第一次出现位置 
+    return low; 
+} 
+     function get (nums) {
+      debugger;
+      function compare(value1, value2) { 
+        if (value1 < value2) { 
+          return -1;
+        } else if (value1 > value2) {
+         return 1;
+        } else {
+         return 0;
+        } 
+      }
+      nums = nums.sort(compare);
+      for(i = 0; i < nums.length; i++) {
+        higher = getUpper(nums,nums[i]);
+        lower = getLower(nums,nums[i]);
+        value = higher - lower + 1 ;
+        if(value == 1) {
+          return (nums[i]);
+        }
+      }
+     }
+ 
+
+      get ([4,1,2,1,2]);
+    // var arr = [0,1,1,2,2,2,2,4,4,4]; //测试数组 
+    // var key = 2;
+    // var higher = getUpper(arr,key);
+    // var lower = getLower(arr,key);
+    // var value= higher-lower+1
+  </script>
+
+  <script  type=single number>
+    function getUpper(arr, key){
+      //获取某个元素最后出现位置 
+        var low = 0, high = arr.length - 1;
+        console.log(high);
+        var mid = Math.round((low + high) / 2);
+        console.log(mid);
+        /*其实是一个递归迭代*/ 
+        while(low <= high){
+            
+            if(arr[mid] <= key){
+               //当要查找的值比中位数大于等于时，把查找的低位限制为mid+1
+                low = mid + 1;
+            }else{
+               //当要找的值比 中位数小时，把查找的高位限制为mid-1 
+                high = mid - 1;  
+            }
+            mid = Math.round((low + high) / 2);
+                   
+        } 
+      // 返回最后出现位置 
+        return high; 
+    }
+     
+    function getLower(arr,key){//获取某个元素第一次出现位置 
+        var low = 0, high = arr.length - 1;
+        var mid = Math.round((low + high) / 2);
+        while(low <= high){      
+            //当要找的值比 中位数小于等于时，把查找的高位限制为mid+1 
+            if(arr[mid] >= key){
+                high = mid -1;
+            }else{
+              //当要找的值比 中位数大时，，把查找的低位限制为mid+1 
+                low = mid + 1;
+            }
+            mid = Math.round((low + high) / 2);       
+        }    
+        //返回第一次出现位置 
+        return low; 
+    } 
+
+    function get (arr) {
+    for(i = 0 ; i < arr.length; i++) {
+      var higher = getUpper(arr,arr[i]);
+      var lower = getLower(arr,arr[i]);
+      var value = higher - lower + 1 ;
+      if(value = 1) {
+        return arr[i];
+      }
+    }  
+  
+    }
+
+    get ([2,2,1]);
+  </script>
+
+  <script type ="single Number">
+    function getUpper(arr, key){
+  //获取某个元素最后出现位置 
+    var low = 0, high = arr.length - 1;
+    console.log(high);
+    var mid = Math.round((low + high) / 2);
+    console.log(mid);
+    /*其实是一个递归迭代*/ 
+    while(low <= high){
+        
+        if(arr[mid] <= key){
+           //当要查找的值比中位数大于等于时，把查找的低位限制为mid+1
+            low = mid + 1;
+        }else{
+           //当要找的值比 中位数小时，把查找的高位限制为mid-1 
+            high = mid - 1;  
+        }
+        mid = Math.round((low + high) / 2);
+               
+    } 
+  // 返回最后出现位置 
+    return high; 
+}
+ 
+function getLower(arr,key){//获取某个元素第一次出现位置 
+    var low = 0, high = arr.length - 1;
+    var mid = Math.round((low + high) / 2);
+    while(low <= high){      
+        //当要找的值比 中位数小于等于时，把查找的高位限制为mid+1 
+        if(arr[mid] >= key){
+            high = mid -1;
+        }else{
+          //当要找的值比 中位数大时，，把查找的低位限制为mid+1 
+            low = mid + 1;
+        }
+        mid = Math.round((low + high) / 2);       
+    }    
+    //返回第一次出现位置 
+    return low; 
+} 
+ 
+var arr = [1,2,1,1,1,1,2,2,2,2,2,2,2,4,5,6,7,8]; //测试数组 
+var key = 2;
+var higher = getUpper(arr,key);
+var lower = getLower(arr,key);
+console.log(higher-lower+1);
+  </script>
+
+
+  <script type="jewels">
+    
+    function jew(J,S) {
+      var counter = 0;
+      for(u = 0 ; u < S.length ; u++) {
+        if(jewels(J,S[u])) {
+          counter = counter + 1 ;
+        }
+      }
+      return counter; 
+    }
+    function jewels(J,S) {
+      for(i = 0; i < S.length ; i++) {
+        for(j = 0 ; j < J.length ; j++) {
+          if(S[i] == J[j]) {
+            return true;
+          }
+        }
+      }
+    } 
+    jew("aA","aAAbbbb")
+  </script>
+
+  <script type="Add Digits">
+    function numberWidth(num) {
+      var d;
+      var counter = 0;
+      var sum ;
+      do{
+        d = num % 10; 
+        counter = counter + 1 ;
+        num = (num - d) / 10
+      } while(num > 0)
+      return counter;
+    }
+    function addDigit(num) {
+      debugger;
+      var count = 0;
+      var sum = 0;
+      if(numberWidth(num) == 1) {
+        return num ; 
+      }
+      var numString = num.toString()
+      do{
+        var sum = 0;
+        count = count + 1;
+        for(i = 0; i < numString.length ; i++) {
+          sum = Number(numString[i]) + sum;
+        }
+        numString = sum.toString();
+      } while (numberWidth(sum) > 1)
+      return sum;
+    }
+  </script>
+
+  <script  type="待定，要用到大数相加">
+    //   function compare(value1, value2) { 
+    //     if (value1 < value2) { 
+    //       return 1;
+    //     } else if (value1 > value2) {
+    //      return -1;
+    //     } else {
+    //      return 0;
+    //     } 
+    //   }
+
+    // function plusOne(nums) {
+    //   nums = Number(nums.join(""));
+    //   nums  = (nums + 1).toString().split("");
+    //   nums = nums.sort(compare);
+    //   for(i = 0 ; i < nums.length ; i++) {
+    //     nums[i] = Number(nums[i])
+    //   }
+    //   return nums; 
+    // }                           // the reason of fail .  the range of number excedd.
+    // plusOne([1,3,2,4])
+    
+
+    function plusOne(digits) {
+      if(digits[digits.length - 1] == 9){
+        digits = Number(digits.join(""));
+        digits  = (digits + 1).toString().split("");
+        for(i = 0 ; i < digits.length ; i++) {
+         digits[i] = Number(digits[i])
+        }
+        return digits
+      }
+      digits[(digits.length) - 1] = digits[(digits.length) - 1] + 1;
+      return digits;
+    }
+
+    plusOne([5,2,2,6,5,7,1,9,0,3,8,6,8,6,5,2,1,8,7,9,8,3,8,4,7,2,5,8,9])
+  </script>
+
+
+  <script type="findHighercase">
+    function isLowercase(text){
+      for(var i=0;i<text.length;i++){
+        var c=text.charAt(i);
+        if(c<'a' || c>'z')
+          return false;
+      }
+      return true;
+    }
+
+    function isHighercase(text){
+      for(var i=0;i<text.length;i++){
+        var c=text.charAt(i);
+        if(c<'A' || c>'Z')
+          return false;
+      }
+      return true;
+    }
+    
+    function isBig(text) {
+      debugger;
+      var a = text.split("")
+      var b = a.splice(0,1).join('')
+      var a = a.join("")
+      if(isHighercase(b) && isLowercase(a) ) {
+        return true ;
+      } else {
+        return false
+      }
+    }
+
+    function condition(text) {
+      if(isBig(text) || isHighercase(text) || isLowercase(text)) {
+        return true 
+      } else {
+        return false
+      }
+    }
+  </script>
+
+  <script type="single number III">
+     function getUpper(arr, key){
+      //获取某个元素最后出现位置 
+        var low = 0, high = arr.length - 1;
+        console.log(high);
+        var mid = Math.round((low + high) / 2);
+        console.log(mid);
+        /*其实是一个递归迭代*/ 
+        while(low <= high){
+            
+            if(arr[mid] <= key){
+               //当要查找的值比中位数大于等于时，把查找的低位限制为mid+1
+                low = mid + 1;
+            }else{
+               //当要找的值比 中位数小时，把查找的高位限制为mid-1 
+                high = mid - 1;  
+            }
+            mid = Math.round((low + high) / 2);
+                   
+        } 
+      // 返回最后出现位置 
+        return high; 
+    }
+     
+    function getLower(arr,key){//获取某个元素第一次出现位置 
+        var low = 0, high = arr.length - 1;
+        var mid = Math.round((low + high) / 2);
+        while(low <= high){      
+            //当要找的值比 中位数小于等于时，把查找的高位限制为mid+1 
+            if(arr[mid] >= key){
+                high = mid -1;
+            }else{
+              //当要找的值比 中位数大时，，把查找的低位限制为mid+1 
+                low = mid + 1;
+            }
+            mid = Math.round((low + high) / 2);       
+        }    
+        //返回第一次出现位置 
+        return low; 
+    } 
+
+    function get (arr) {
+      var array1 = []
+      function compare(value1, value2) { 
+          if (value1 < value2) { 
+            return -1;
+          } else if (value1 > value2) {
+           return 1;
+          } else {
+           return 0;
+          } 
+        }
+        arr = arr.sort(compare);
+      for(i = 0 ; i < arr.length; i++) {
+        var higher = getUpper(arr,arr[i]);
+        var lower = getLower(arr,arr[i]);
+        var value = higher - lower + 1 ;
+        if(value == 1) {
+           array1.push(arr[i])
+        }
+      }       
+  }
+  get([1,2,1,3,2,5])   
+  </script>
+
+
+  <script type="Intersection of Two Arrays">
+
+    // function intersectionArray (array,array1){
+    //   var count = 0;
+    //   if( intersection(array,array1) ) {
+    //     count = count + 1;
+    //   }
+    // }
+    function intersection(array,array1){
+      var array2 = [];
+      for(i = 0; i < array.length; i++){
+        for(j = 0; j < array1.length; j++){
+          if(array[i] == array1[j]){
+            array2.push(array[i])
+            break;
+          }
+        }
+      }
+      if(array2.length == 1) {
+        return array2;
+      }
+      for(u = 0; u <array2.length; u++) {
+        for(k = u + 1; k < array2.length; k++) {
+          if(array2[u] == array2[k]) {
+            array2.splice(u,1)
+            u = u -1;
+          }
+        }
+      }
+      return array2;
+    }
+
+    // function repeat(array,array1){
+    //   for(u = 0;)
+    // }
+    intersection([1,2,2,1],[1,2])
+  </script>
+
+
+  <script type="addBinary">
+    function addBinary(a,b) {
+      var a = parseInt(a,2)
+      var b = parseInt(b,2)
+      var c = a + b
+      var d = c.toString(2);
+      return d;
+    }
+    addBinary("11","1")
+  </script>
+
+  <script  type="反转字符串中的元音字母">
+  function rotate(s) {
+    var positions = []
+    var pos = s.indexOf("e")
+    while(pos > -1 ) {
+      s[pos] = "o"
+
+    }
+  }
+    // var stringValue = "Lorem ipsum dolor sit amet, consectetur adipisicing elit";
+    // var positions = new Array();
+    // var pos = stringValue.indexOf("e");
+    // while(pos > -1){ 
+    //   positions.push(pos);
+    //    pos = stringValue.indexOf("e", pos + 1);
+    // }
+  </script>
+
+  <script  type="largestNumber">
+    function largestNumber(nums){
+      function compare(value1,value2) {
+          if(value1 < value2) {
+              return 1;
+          } else if(value2 > value1) {
+              return -1;
+          } else {
+              return 0
+          }
+      }
+      // var nums
+      // nums = nums.join("")
+      // nums = nums.split('')
+      nums = nums.sort(compare)
+      nums = nums.join("")
+      return nums;
+    }
+    largestNumber([10,2])
+  </script>
+
+
+  <script type="x">
+       function getUpper(arr, key){
+      //获取某个元素最后出现位置 
+        var low = 0, high = arr.length - 1;
+        console.log(high);
+        var mid = Math.round((low + high) / 2);
+        console.log(mid);
+        /*其实是一个递归迭代*/ 
+        while(low <= high){
+            
+            if(arr[mid] <= key){
+               //当要查找的值比中位数大于等于时，把查找的低位限制为mid+1
+                low = mid + 1;
+            }else{
+               //当要找的值比 中位数小时，把查找的高位限制为mid-1 
+                high = mid - 1;  
+            }
+            mid = Math.round((low + high) / 2);
+                   
+        } 
+      // 返回最后出现位置 
+        return high; 
+    }
+     
+    function getLower(arr,key){//获取某个元素第一次出现位置 
+        var low = 0, high = arr.length - 1;
+        var mid = Math.round((low + high) / 2);
+        while(low <= high){      
+            //当要找的值比 中位数小于等于时，把查找的高位限制为mid+1 
+            if(arr[mid] >= key){
+                high = mid -1;
+            }else{
+              //当要找的值比 中位数大时，，把查找的低位限制为mid+1 
+                low = mid + 1;
+            }
+            mid = Math.round((low + high) / 2);       
+        }    
+        //返回第一次出现位置 
+        return low; 
+    } 
+
+    function get (arr) {
+        for(i = 0 ; i < arr.length; i++) {
+          var higher = getUpper(arr,arr[i]);
+          var lower = getLower(arr,arr[i]);
+          var value = higher - lower + 1 ;
+          if(value == 2) {
+            return arr[i];
+          }
+        }  
+    }
+    get([1,3,4,2,2])
+  </script>
+
+  <script type="findDuplicate number">
+    var findDuplicate = function(nums) {
+         function getUpper(arr, key){
+          //获取某个元素最后出现位置 
+            var low = 0, high = arr.length - 1;
+            console.log(high);
+            var mid = Math.round((low + high) / 2);
+            console.log(mid);
+            /*其实是一个递归迭代*/ 
+            while(low <= high){
+                
+                if(arr[mid] <= key){
+                   //当要查找的值比中位数大于等于时，把查找的低位限制为mid+1
+                    low = mid + 1;
+                }else{
+                   //当要找的值比 中位数小时，把查找的高位限制为mid-1 
+                    high = mid - 1;  
+                }
+                mid = Math.round((low + high) / 2);
+                       
+            } 
+          // 返回最后出现位置 
+            return high; 
+        }
+         
+        function getLower(arr,key){//获取某个元素第一次出现位置 
+            var low = 0, high = arr.length - 1;
+            var mid = Math.round((low + high) / 2);
+            while(low <= high){      
+                //当要找的值比 中位数小于等于时，把查找的高位限制为mid+1 
+                if(arr[mid] >= key){
+                    high = mid -1;
+                }else{
+                  //当要找的值比 中位数大时，，把查找的低位限制为mid+1 
+                    low = mid + 1;
+                }
+                mid = Math.round((low + high) / 2);       
+            }    
+            //返回第一次出现位置 
+            return low; 
+        } 
+        
+        function compare(value1,value2) {
+            if(value1 < value2) {
+                return -1;
+            } else if(value1 > value2) {
+                return 1 ;
+            } else {
+                return 0;
+            }
+        }
+        
+        function get (arr) {
+            var arr = arr.sort(compare)
+            for(i = 0 ; i < arr.length; i++) {
+              var higher = getUpper(arr,arr[i]);
+              var lower = getLower(arr,arr[i]);
+              var value = higher - lower + 1 ;
+              if(value > 1) {
+                return true;
+              }
+            } 
+            return false 
+        }
+        return get(nums)
+    };
+  </script>
+
+  <script  type="MoveZeros">
+    function deleteZero(nums) {
+      var counter = 0;
+      for(i = 0; i < nums.length; i++) {
+        if(nums[i] == 0) {
+          nums.splice(i,1)
+          counter = counter + 1;
+          i = i -1;
+        }
+      }
+      for(j = 0; j < counter; j++) {
+        nums.push(0);
+      }
+    }
+    deleteZero([0,0,1])
+  </script>
+
+  <script type="xxx">
+     function positions (haystack,needle) {
+    //   var u;
+    //   for(i = 0; i < 1; i++) {
+    //     for(j = 0; j < haystack.length; j++) {
+    //       if(needle[i] == haystack[j]) {
+    //         f = j;
+    //         u = j;
+    //         break;
+    //       }
+    //     }
+    //   }
+      var stringValue = haystack; 
+      var positions = new Array(); 
+      var pos = stringValue.indexOf(needle[0]);
+      while(pos > -1){ 
+        positions.push(pos);
+        pos = stringValue.indexOf(needle[0], pos + 1);
+      }
+      return (positions);
+
+    }
+   var u =positions(haystack,needle);
+   var u1 = u[0]
+   var u2 = 0;
+   var f;
+   function sum(haystack,needle,positions) {
+      for(i = 0; i < positions.length; i++){
+          f = positions[i]
+        for(k = 0; k < needle.length; k++) {
+          if(needle[k] == haystack[u1] ){
+             u1 = u1 + 1;
+          } else {
+            u2 = u2 + 1
+            u1 = positions[u2]
+            return -1;
+          }
+        }
+      return f;
+    }
+  }
+
+    function finall (positions,value) {
+      var array = [];
+      for(k = 0; k < positions.length; k++) {
+        array.push(value)
+      }
+      console.log(array)
+    }
+
+    finall(positions("mississip","issip"),sum( "mississip","issip",positions("mississip","issip"))) 
+  </script>
+
+
+  <script type="Implement strStr">
+    var a = "mississippi";
+    console.log(a.indexOf(" issip"))
+  </script>
+
+  <script type="Rotate Array">
+    function rotate1(nums,k) {
+      for(i = 0; i < k; i++) {
+        var a = nums.pop();
+        nums.unshift(a);
+      }
+      reutrn nums;
+    }
+    rotate1([1,2,3,4,5,6,7],3)
+  </script>
+
+  <script type="Judge Route Circle">
+    function judgeCircle(moves) {
+      var counter = 0;
+      for(i = 0; i< moves.length; i++) {
+        if(moves[i] == "U") {
+          counter = counter + 1;
+        }
+
+        if(moves[i] == "D" ) {
+          counter = counter - 1;
+        }
+
+        if(moves[i] == "L") {
+          counter = counter + 2;
+        }
+
+        if(moves[i] == "R") {
+          counter = counter - 2;
+        }
+      }
+      if(counter == 0) {
+        return true ;
+      } else {
+        return false ;
+      }
+    }
+    judgeCircle("LDRRLRUULR");
+  </script>
+
+  <script type="xxx">
+    function missNumbers(nums) {
+      function compare(value1,value2) {
+        if(value1 < value2) {
+          return -1;
+        } else if(value1 > value2) {
+          return 1;
+        } else {
+          return 0;
+        }
+      }
+      var  nums1 = nums.sort(compare);
+      for(i = 0; i <nums.length; i++) {
+        if(nums[i + 1] - nums)
+      }
+    }
+  </script>
+
+  <script type="xxx">
+     function getUpper(arr, key){
+      //获取某个元素最后出现位置 
+        var low = 0, high = arr.length - 1;
+        console.log(high);
+        var mid = Math.round((low + high) / 2);
+        console.log(mid);
+        /*其实是一个递归迭代*/ 
+        while(low <= high){
+            
+            if(arr[mid] <= key){
+               //当要查找的值比中位数大于等于时，把查找的低位限制为mid+1
+                low = mid + 1;
+            }else{
+               //当要找的值比 中位数小时，把查找的高位限制为mid-1 
+                high = mid - 1;  
+            }
+            mid = Math.round((low + high) / 2);
+                   
+        } 
+      // 返回最后出现位置 
+        return high; 
+    }
+     
+    function getLower(arr,key){//获取某个元素第一次出现位置 
+        var low = 0, high = arr.length - 1;
+        var mid = Math.round((low + high) / 2);
+        while(low <= high){      
+            //当要找的值比 中位数小于等于时，把查找的高位限制为mid+1 
+            if(arr[mid] >= key){
+                high = mid -1;
+            }else{
+              //当要找的值比 中位数大时，，把查找的低位限制为mid+1 
+                low = mid + 1;
+            }
+            mid = Math.round((low + high) / 2);       
+        }    
+        //返回第一次出现位置 
+        return low; 
+    } 
+    
+    function compare(value1,value2) {
+        if(value1 < value2) {
+            return -1;
+        } else if(value1 > value2) {
+            return 1 ;
+        } else {
+            return 0;
+        }
+    }
+    
+    function get (arr) {
+        var arr = arr.sort(compare)
+        for(i = 0 ; i < arr.length; i++) {
+          var higher = getUpper(arr,arr[i]);
+          var lower = getLower(arr,arr[i]);
+          var value = higher - lower + 1 ;
+          if(value > 1) {
+              arr.splice(arr[i],value - 1)
+          }
+        } 
+        return arr;
+    }
+
+   function getNumber(nums) {
+    var array3 = get(nums);
+    if(nums == 1) {
+         return 0;
+     }
+    for(i = 0; i < nums.length; i++) {
+      if( isNaN(nums[i + 1] - nums[i]) ) {
+        return (nums[nums.length - 1] + 1);
+      }
+      if(nums[i + 1] - nums[i] !== 1) {
+        return (nums[i + 1] - 1)
+      }
+    }
+   }
+
+   getNumber([1,2])
+  </script>
+
+
+  <script  type="xxxx">
+    var missingNumber = function(nums) {
+        function getUpper(arr, key){
+          //获取某个元素最后出现位置 
+            var low = 0, high = arr.length - 1;
+            console.log(high);
+            var mid = Math.round((low + high) / 2);
+            console.log(mid);
+            /*其实是一个递归迭代*/ 
+            while(low <= high){
+                
+                if(arr[mid] <= key){
+                   //当要查找的值比中位数大于等于时，把查找的低位限制为mid+1
+                    low = mid + 1;
+                }else{
+                   //当要找的值比 中位数小时，把查找的高位限制为mid-1 
+                    high = mid - 1;  
+                }
+                mid = Math.round((low + high) / 2);
+                       
+            } 
+          // 返回最后出现位置 
+            return high; 
+        }
+         
+        function getLower(arr,key){//获取某个元素第一次出现位置 
+            var low = 0, high = arr.length - 1;
+            var mid = Math.round((low + high) / 2);
+            while(low <= high){      
+                //当要找的值比 中位数小于等于时，把查找的高位限制为mid+1 
+                if(arr[mid] >= key){
+                    high = mid -1;
+                }else{
+                  //当要找的值比 中位数大时，，把查找的低位限制为mid+1 
+                    low = mid + 1;
+                }
+                mid = Math.round((low + high) / 2);       
+            }    
+            //返回第一次出现位置 
+            return low; 
+        } 
+        
+        function compare(value1,value2) {
+            if(value1 < value2) {
+                return -1;
+            } else if(value1 > value2) {
+                return 1 ;
+            } else {
+                return 0;
+            }
+        }
+        
+        function get (arr) {
+            var arr = arr.sort(compare)
+            for(i = 0 ; i < arr.length; i++) {
+              var higher = getUpper(arr,arr[i]);
+              var lower = getLower(arr,arr[i]);
+              var value = higher - lower + 1 ;
+              if(value > 1) {
+                  arr.splice(arr[i],value - 1)
+              }
+            } 
+            return arr;
+        }
+
+       function getNumber(nums) {
+        var array3 = get(nums);
+        if(nums == 1) {
+             return 0;
+         }
+        for(i = 0; i < nums.length; i++) {
+          if( isNaN(nums[i + 1] - nums[i]) ) {
+            return (nums[nums.length - 1] + 1);
+          }
+          if(nums[i + 1] - nums[i] !== 1) {
+            return (nums[i + 1] - 1)
+          }
+        }
+       }
+
+        
+      return getNumber(nums)
+    };
+  </script>
+   
+   <script  type="xxx">
+    function sum () {
+      debugger;
+      return arguments;
+        function sum1() {
+          return arguments;
+        }
+    }
+    sum1(1,2,1,2,1,1)
+    </script>
+
+    <script type="xxx">
+      function rotateArray(array) {
+        function compare(value1,value2) {
+          if(value1 < value2) {
+            return 1;
+          } else if(value1 > value2) {
+            return -1
+          } else {
+            return 0;
+          }
+        }
+        return array.sort(compare);
+      }
+    </script>
+
+    <script  type="isHapperNumber">
+    function sum(n) {
+      function digitSquareSum(n) {
+        var sum = 0
+        do {
+          var digit = n % 10
+          sum += digit * digit
+          n = (n - digit) / 10
+        } while (n > 0)
+        return sum;
+      }
+
+      function isHapperNumber(n) {
+        do{
+          n = digitSquareSum(n)
+        } while (n != 1 && n != 4)
+        if(n === 1) {
+          return true
+        } else {
+          return false
+        }
+      }
+      return isHapperNumber(n)
+    } 
+    sum(19)
+    </script>
+
+    <script type="perfectNumber">
+      function perfectNumber(num) {
+        var sum = 1
+
+        var sr = Math.sqrt(num)
+
+        for(var i = 2; i < sr; i++) {
+          if(num % i === 0) {
+            sum += i + (num / i)
+          }
+        }
+
+        if(sr === Math.floor(sr)) {
+          sum = sr + sum
+        }
+
+        return sum === num
+      }
+    </script>
+
+    <script type="hanmingDistanca">
+    function hanming(a,b) {
+      var d1,d2
+      var count = 0
+
+      do {
+        d1 = a % 2
+        d2 = b % 2
+        count += d1 === d2 ? 0 : 1
+        a = (a - d1) / 2
+        b = (b - d2) / 2
+      } while (a > 0 || b > 0)
+
+      return count;
+    }
+    </script>
+
+    <script type="Max Consecutive Ones">
+      var count = 0;
+      function max (array) {
+        var counter = 0;
+        for(i = 0; i < array.length; i++) {
+          if(array[i] == 1) {
+            counter = counter + 1;
+          }
+          if(counter > count) {
+              count = counter;
+          }
+          if(array[i] == 0) {
+            counter = 0;
+          }
+        }
+        return count;
+      }
+      max([1,1,0,1,1,1])
+    </script>
+
+    <script type="Array Partition I">
+      function apart (array) {
+        var sum = 0;
+
+        function compare(value1,value2) {
+          if(value1 < value2 ){
+            return -1;
+          } else if(value1 > value2 ) {
+            return 1;
+          } else {
+            return 0;
+          }
+        }
+
+        array = array.sort(compare)
+
+        for(i = 0; i < array.length ; i = i + 2) {
+          sum = Math.min(array[i],array[i + 1]) + sum
+        }
+
+        return sum
+      }
+
+      apart( [1,4,3,2] );
+
+    </script>
+
+    <script type="xxx">
+    nums = [1,2,3,4]
+
+      var minMoves = function(nums) { 
+    var min = nums.reduce( (el, acc) => { return el < acc ? el : acc }, nums[0] )
+
+    return nums.reduce((el, acc) => { return acc + (el - min)}, 0);    
+    };
+
+    (el, acc) => { return el < acc ? el : acc }, nums[0]
+
+    function (el,acc) {
+       return el < acc ? el : acc  ==  pre 
+    } 
+
+    </script>
+
+    <script type="x">
+      function sum(num) {
+        var count = 0;
+        if(num == 0) {
+          return count;
+        }
+        
+        var array
+        for(i = 0; i < num.toString(2).length; i++) {
+          if(num.toString(2)[i] == 1) {
+            count = count + 1;
+            
+          }
+        }
+        count = count.toString()
+        return count + sum(num - 1) 
+      }
+
+      function reverse(num) {
+        debugger
+        var aj = sum(num);
+        aj = aj.split("").reverse();
+        for(j = 0; j < aj.length; j++) {
+          aj[j] = Number(aj[j])
+        }
+        return aj; 
+      }
+
+      reverse(2)
+    </script>
+
+    <script type="xxxx">
+            function sum(num) {
+
+              var count = 0;
+
+              
+              var array = []
+
+              for(i = 0; i < num.toString(2).length; i++) {
+                if(num.toString(2)[i] == 1) {
+                  count = count + 1;
+                }
+              }
+              
+              array.push(count)
+              
+              if(num == 0) {
+                return array;
+              }
+              return sum(num - 1).concat( array ) 
+            }
+            
+
+            sum(5)
+
+            // function aj(num) {
+            //   return sum(num).reverse()
+            // }
+
+
+
+          //   function reverse(num) {
+          //     var aj = sum(num);
+          //     aj = aj.split("").reverse();
+          //     for(j = 0; j < aj.length; j++) {
+          //       aj[j] = Number(aj[j])
+          //     }
+          //     return aj; 
+          //   }
+          
+          // return reverse(num)
+      
+      sum(5)
+    </script>
+
+    <script type="xxx">
+      function sum(num) {
+        var counter = 0;
+        var array = [];
+        for(i = 0; i <= num; i++) {
+          for(j = 0; j < i.toString(2).length; j++) {
+            if(i.toString(2)[j] == 1) {
+              counter = counter + 1;
+            }
+          }
+          array.push(counter)
+          counter = 0;
+        }
+        return array;
+      }
+
+      sum(5)
+    </script>
+
+    <script type="xxxx">
+            function getUpper(arr, key){
+                var low = 0, high = arr.length - 1;
+                var mid = Math.round((low + high) / 2);
+                while(low <= high){
+                    
+                    if(arr[mid] <= key){
+                        low = mid + 1;
+                    }else{
+                        high = mid - 1;  
+                    }
+                    mid = Math.round((low + high) / 2);
+                           
+                } 
+                return high; 
+            }
+             
+            function getLower(arr,key){
+                var low = 0, high = arr.length - 1;
+                var mid = Math.round((low + high) / 2);
+                while(low <= high){      
+                    if(arr[mid] >= key){
+                        high = mid -1;
+                    }else{
+                        low = mid + 1;
+                    }
+                    mid = Math.round((low + high) / 2);       
+                }    
+                return low; 
+            } 
+            
+            function compare(value1,value2) {
+                if(value1 < value2) {
+                    return -1;
+                } else if(value1 > value2) {
+                    return 1 ;
+                } else {
+                    return 0;
+                }
+            }
+            
+            function get (arr) {
+
+                var arr = arr.split("");
+                for(i = 0 ; i < arr.length; i++) {
+                  var higher = getUpper(arr,arr[i]);
+                  var lower = getLower(arr,arr[i]);
+                  var value = higher - lower + 1 ;
+                  if(value == 1) {
+                      return i;
+                  }
+                } 
+                return -1;
+            }
+
+          // function get1(arr) {
+          //   var array5 = get(arr)
+          //   for(i = 0; i < array5.length; i++) {
+          //     for(j = i + 1; j < array5.length; j++) {
+          //       if(array5[i] == array5[j]) {
+          //         array5.splice(i,1);
+
+          //       }
+          //     }
+          //   }
+          //   return array5
+          // }
+          get("leetcode");
+    </script>
+
+    <script  type="xxxx">
+      function helper(s){
+        debugger
+        var array = []
+        for(i = 0; i < s.length; i++) {
+          var pos = s.indexOf(s[i])
+          while(pos > -1) {
+            array.push(pos)
+            pos = s.indexOf(s[i],pos + 1)
+          }
+          if(array.length == 1) {
+            return i
+          }
+          array = []
+        }
+      
+      return -1;
+      }
+
+      helper("loveleetcode")
+    </script>
+
+    <script type="climbing stairs">
+      function helper(n) {
+        var array = [];
+        array[0] = 1
+        array[1] = 1
+        array[2] = 2
+        for(i = 3; i < n + 1; i++) {
+          array[i] = array[i - 1] + array[i - 2]
+        }
+        return array[n]
+      }
+      helper(10)
+    </script>
+
+    <script type="max substring">
+      function helper(nums) {
+        var max = 0;
+        var max1 = 0;
+        for(i = 0; i < nums.length; i++) {
+          for(j = i; j < nums.length; j++) {
+            max = nums[j] + max 
+            if(max > max1) {
+              max1 = max
+            }
+          }
+          max = 0;
+        }
+        return max1
+      }
+
+      helper([-1])
+    </script>
+
+    <script type="twoSum 2">
+      function helper(numbers,target) {
+        var array = []
+        for(i = 0; i < numbers.length; i++ ) {
+          for(j = numbers.length - 1; j > -1; j-- ) {
+            if(numbers[i] + numbers[j] > target) {
+              continue;
+            }
+            if(numbers[i] + numbers[j] < target) {
+              break;
+            }
+            if(numbers[i] + numbers[j] == target) {
+              array.push(i + 1)
+              array.push(j + 1)
+              return array
+            }
+          }
+        }
+      }
+      helper([2, 7, 11, 15],9)
+    </script>
+    
+    <script type="xxxx">
+      function helper(num) {
+        for(i = 0; i < num.length; i++) {
+          for(j = i + 1;j < num.length; j++ ) {
+            if(num[i] == num[j]) {
+              num.splice(j,1)
+              j--
+            }
+          }
+        }
+        return num.length
+      }
+       function condition(num) {
+        var a = num.length / 2
+        var l = helper(num) 
+        if(l > a) {
+          return l
+        }
+        if(l = a) {
+          return l
+        }
+        if(l < a) {
+          return l
+        }
+       }
+
+       condition([1,1,1,1,2,2,2,3,3,3])
+    </script>
+
+    <script type="xxx">
+      function helper(array) {
+        if(array[array.length - 2] == 1) {
+          return false
+        } else {
+          return true
+        }
+      }
+    </script>
+
+    <script type="xxx">
+    var merge = function(nums1, m, nums2, n) {
+       function compare(value1,value2) {
+          if(value1 < value2) {
+            return -1
+          } else if(value1 > value2) {
+            return 1
+          } else {
+            return 0
+          }
+        }
+        var nums1 = nums1.concat(nums2);
+        var nums1 = nums1.sort(compare)
+        for(i = 0; i < nums1.length; i++) {
+          if(nums1[i] == 0) {
+            nums1.splice(i,1);
+            i--;
+          }
+        }
+    };
+
+      merge([1,2,3,0,0,0],3,[2,5,6],3)
+    </script>
+
+    <script type="xxxx">
+  var merge = function(nums1, m, nums2, n) {
+    for(i = (nums1.length - m); i < nums1.length; i++) {
+          for(j = 0 ; j < i - 2; j++) {
+            nums1[i] = nums2[j] ; 
+          } 
+      }
+      function compare(value1, value2) { 
+        if (value1 < value2) {
+          return -1;
+        } else if (value1 > value2) { 
+          return 1;
+        } else {
+          return 0;
+        }
+      }
+      nums1.sort(compare)
+};
+    merge([0],0,[1],1)
+    </script>
+
+    <script type="xxxx">
+       var merge = function(nums1, m, nums2, n) {
+        nums1.splice(m,nums1.length - m)
+        nums2.splice(n,nums1.length - n)
+        var nums1 = nums1.concat(nums2)
+        function compare(value1, value2) { 
+          if (value1 < value2) {
+            return -1;
+          } else if (value1 > value2) { 
+            return 1;
+          } else {
+            return 0;
+          }
+        }
+        nums1.sort(compare)
+        return nums1
+       }
+        merge([1,2,3,0,0,0],3,[2,5,6],3)
+    </script>
+
+    <script type="xxxx">
+      var merge = function(nums1, m, nums2, n) {
+          var x = 0,
+              y = 0;
+          
+          nums1.splice(m, nums1.leberngth);
+          nums2.splice(n, nums2.length);
+          
+          while(y < n){
+              if(nums2[y] < nums1[x] || nums1[x] === undefined){
+                  nums1.splice(x, 0, nums2[y]);
+                  x++;
+                  y++;    
+              } else {
+                  x++;
+              }
+          }
+      };
+              merge([1,2,3,0,0,0],3,[2,5,6],3)
+    </script>
+
+    <script type="xxxx">
+      function(s,t) {
+        var array = [];
+        var array1 = [];
+        for(i = 0; i < s.length; i++) {
+          var pos = s.indexOf(s[i])
+          for(j = 0; j < l.length; j++) {
+            var pos1 = t.indexOf(s[i])
+            break
+          }
+        }
+      }
+    </script>
+
+    <script type="xxxx">
+  var reverse = function(x) {
+      function reverse2(x) {
+        var a =x.toString().split("").reverse();
+        if(a[a.length - 1] == "-") {
+          var b = a.pop()
+          a.unshift(b)
+          var c = Number(a.join(""));
+        }
+         if(c >= -(2**31) && c <= 2**31 -1) {
+          return c
+        } else {
+          return 0
+        }
+      }
+      
+      function reverse1(x) {
+        var a =Number(x.toString().split("").reverse().join(""))
+        if(a >= -(2**31) && a <= 2**31 -1) {
+          return a
+        } else {
+          return 0
+        }
+      }
+      
+      function reverse3(x) {
+        if(x >= 0) {
+          return reverse1(x)
+        } else {
+          return reverse2(x);
+        }
+      }
+    return reverse3(x)
+  };
+      reverse3(1534236469);
+    </script>
+
+    <script type="xxxx">
+      function helper(nums) {
+       function  compare(value1,value2) {
+          if(value1 < value2) {
+            return -1
+          } else if(value1 > value2) {
+            return 1
+          } else {
+            return 0
+          }
+        }
+
+        nums.sort(compare)
+
+        for(i = 0; i < nums.length; i++) {
+          for(j = i + 1; j < nums.length; j++) {
+            if(nums[i] == nums[j]) {
+              nums.splice(j , 1)
+              j--
+            }
+          }
+        }
+        return nums
+      }
+
+      function help(nums) {
+        var array = []
+        for(i = 0; i < nums.length; i++) {
+          array[i] = i + 1;
+        }
+        return array
+      }
+
+      function sos (nums) {
+        var b = help(nums)
+        var a = helper(nums)
+        var array1 = []
+        debugger
+        for(i = 0; i < b.length; i++) {
+          if(a[i] !== b[i]) {
+            array1.push(b[i])
+            a.splice(i,0,0)
+          }
+        }
+        return array1
+      } 
+
+    </script>
+
+    <script  type="xxxx">
+      function helper(nums) {
+       function  compare(value1,value2) {
+          if(value1 < value2) {
+            return -1
+          } else if(value1 > value2) {
+            return 1
+          } else {
+            return 0
+          }
+        }
+
+        nums.sort(compare)
+
+        for(i = 0; i < nums.length; i++) {
+          for(j = i + 1; j < nums.length; j++) {
+            if(nums[i] == nums[j]) {
+              nums.splice(j , 1)
+              j--
+            }
+          }
+        }
+        return nums
+      }
+
+      function help(nums) {
+        var nums6= nums.length;
+        nums = helper(nums)
+        var array = []
+        var j = 1;
+        if(nums.length == 1 && nums[0] == 1 ) {
+          var d = [2]
+          return d
+        }
+        for(i = 0; i < nums6; i++) {
+          if(nums[i] != j) {
+            array.push(j)
+            nums.splice(i,0,0)
+          }
+          j++;
+        }
+        return array;
+      }
+
+      help([1,1,2,2])
+    </script>
+
+    <script type="xxxx">
+      var findDisappearedNumbers = function(nums) {
+        debugger
+        for(var i = 0; i < nums.length;) {
+            while(nums[nums[i]-1] != nums[i]) {
+                t = nums[nums[i]-1];
+                nums[nums[i]-1] = nums[i];
+                nums[i] = t;
+            }
+            i++;
+        }
+        var ans = [];
+        for(var i = 0; i < nums.length; ++i) {
+            if (nums[i] != i+1) {
+                ans.push(i+1);
+            }
+        }
+        return ans;
+    };
+    findDisappearedNumbers([1,2,3,4,5,7,8,2,3])
+    </script>
+
+    <script type="xxxx">
+      function helper(num) {
+        var a = num.toString(2).split("")
+        for(i = 0; i < a.length; i++) {
+          if(a[i] == "0") {
+            a[i] = "1"
+          } else {
+            a[i] = "0"
+          }
+        }
+        a = parseInt( a.join("") , 2 )
+        return a
+      }
+
+      helper(5);
+    </script>
+
+    <script  type="xxxx">
+      function helper(s,t) {
+        var count = 0
+        if(s.length != t.length) {
+          return false;
+        }
+        for(i = 0; i < t.length; i++) {
+          for(j = 0; j < s.length; j++) {
+            if(t[i] != s[j]) {
+              count = count + 1;
+              if(count == s.length) {
+                return false
+              }
+            }
+          }
+          count = 0;
+        }
+        return true
+      }
+
+      helper("aacc","ccac")
+    </script>
+
+    <script type="xxxx">
+    function helper(s,t) {
+      function compare(value1,value2) {
+        if(value1 < value2) {
+          return -1
+        } else if(value1 > value2) {
+          return 1
+        } else {
+          return 0
+        }
+      }
+      
+      if(s == "" && t == "") {
+        return true
+      }
+
+      if(s.length != t.length) {
+        return false;
+      }
+
+      var a = s.split("").sort(compare)
+      var b = t.split("").sort(compare)
+  
+      for(i = 0; i < a.length; i++) {
+        if(a[i] != b[i]) {
+          return false
+        } 
+      }
+      return true
+    }
+
+    helper("aad","cab")
+    </script>
+
+    <script type="xxxx">
+            function getUpper(arr, key){
+                var low = 0, high = arr.length - 1;
+                var mid = Math.round((low + high) / 2);
+                while(low <= high){
+                    
+                    if(arr[mid] <= key){
+                        low = mid + 1;
+                    }else{
+                        high = mid - 1;  
+                    }
+                    mid = Math.round((low + high) / 2);
+                           
+                } 
+                return high; 
+            }
+             
+            function getLower(arr,key){
+                var low = 0, high = arr.length - 1;
+                var mid = Math.round((low + high) / 2);
+                while(low <= high){      
+                    if(arr[mid] >= key){
+                        high = mid -1;
+                    }else{
+                        low = mid + 1;
+                    }
+                    mid = Math.round((low + high) / 2);       
+                }    
+                return low; 
+            } 
+            
+            function compare(value1,value2) {
+                if(value1 < value2) {
+                    return -1;
+                } else if(value1 > value2) {
+                    return 1 ;
+                } else {
+                    return 0;
+                }
+            }
+            
+            function get (arr) {
+                arr = arr.sort(compare)
+                for(i = 0 ; i < arr.length; i++) {
+                  var higher = getUpper(arr,arr[i]);
+                  var lower = getLower(arr,arr[i]);
+                  var value = higher - lower + 1 ;
+                  if(value >= arr.length / 2) {
+                      return arr[i]
+                  }
+                } 
+            }
+
+            get ([3,2,3])
+    </script>
+    
+
+    <script type="xxxx">
+      function helper(nums) {
+        function compare(value1,value2) {
+          if(value1 < value2) {
+            return -1;
+          } else if(value1 > value2) {
+            return 1
+          } else {
+            return 0
+          }
+        }
+        nums = nums.sort(compare)
+        return nums
+      }
+
+      helper([2,0,2,1,1,0])
+    </script> 
+
+
+    <script  type ="xxxx">
+    function isHighercase(text){
+      for (i=0; i<text.length; i++){
+        var c=text.charAt(i);
+        if(c<'A' || c>'Z')
+          return false;
+      }
+      return true;
+    }
+    function high(text) {
+      text = text.trim()
+      if(text == "") {
+        return 0;
+      }
+      for(j = text.length - 1; j > -1; j--) {
+        if(isHighercase(text[j])) {
+          return text.length -j;
+        }
+      }
+      return text.length
+    }
+
+    high()
+
+    </script>
+
+    <script type="xxxx">
+        function lengthOfLastWord(s) {
+            let words = s.trim().split(" ")
+            return words[words.length-1].split("").length
+        };
+        lengthOfLastWord  ("b a ")
+    </script>
+
+    <script type="xxxxx">
+      var findErrorNums = function(nums) {
+          var map = [];
+          var ans = [];
+          for(var i = 0; i < nums.length; i++){
+              if(map[nums[i]] == undefined){
+                  map[nums[i]] = 1;
+              } else {
+                  map[nums[i]] = map[nums[i]] + 1;
+              }
+          }
+          
+          for(var i = 1; i < map.length; i++){
+              if(map[i] == undefined){
+                  ans[1] = i;
+              }
+              if(map[i] == 2){
+                  ans[0] = i;
+              }
+          }
+          
+          if(ans[1] == undefined){
+              ans[1] = i;
+          }
+          return ans;
+      };
+
+      findErrorNums ([1,2,2,4])
+    </script>
+
+    <script type="xxxxx">
+      function getUpper(arr, key){
+          var low = 0, high = arr.length - 1;
+          var mid = Math.round((low + high) / 2);
+          while(low <= high){
+              
+              if(arr[mid] <= key){
+                  low = mid + 1;
+              }else{
+                  high = mid - 1;  
+              }
+              mid = Math.round((low + high) / 2);        
+          } 
+          return high; 
+      }
+       
+      function getLower(arr,key){
+          var low = 0, high = arr.length - 1;
+          var mid = Math.round((low + high) / 2);
+          while(low <= high){      
+              if(arr[mid] >= key){
+                  high = mid -1;
+              }else{
+                  low = mid + 1;
+              }
+              mid = Math.round((low + high) / 2);       
+          }    
+          return low; 
+      } 
+      
+      function get (arr) {
+          arr = arr.sort(compare)
+          for(i = 0 ; i < arr.length; i++) {
+            var higher = getUpper(arr,arr[i]);
+            var lower = getLower(arr,arr[i]);
+            var value = higher - lower + 1 ;
+            if(value > 1) {
+                arr.splice(arr[i],1)
+                i--
+            }
+          } 
+      }
+
+      get([1,2,2,2,2,3,4,5])
+    </script>
+
+    <script type="xxxxx">
+      function compare(value1,value2) {
+        if(value1 < value2) {
+          return -1
+        } else if(value1 > value2) {
+          return 1
+        } else {
+          return 0
+        }
+      }
+
+      function helper(nums) {
+        var num = new Array(nums.length)
+        var count = 1
+        for(i = 0; i < num.length; i++) {
+          num[i] = count;
+          count++;
+        }
+        return num;
+      }
+      
+
+      function getUpper(arr, key){
+          var low = 0, high = arr.length - 1;
+          var mid = Math.round((low + high) / 2);
+          while(low <= high){
+              
+              if(arr[mid] <= key){
+                  low = mid + 1;
+              }else{
+                  high = mid - 1;  
+              }
+              mid = Math.round((low + high) / 2);        
+          } 
+          return high; 
+      }
+       
+      function getLower(arr,key){
+          var low = 0, high = arr.length - 1;
+          var mid = Math.round((low + high) / 2);
+          while(low <= high){      
+              if(arr[mid] >= key){
+                  high = mid -1;
+              }else{
+                  low = mid + 1;
+              }
+              mid = Math.round((low + high) / 2);       
+          }    
+          return low; 
+      } 
+
+      function get (arr) {
+          arr = arr.sort(compare)
+          for(i = 0 ; i < arr.length; i++) {
+            var higher = getUpper(arr,arr[i]);
+            var lower = getLower(arr,arr[i]);
+            var value = higher - lower + 1 ;
+            if(value > 1) {
+                arr.splice(arr[i],1)
+                return arr[i]
+            }
+          } 
+      }
+
+      function get1 (arr) {
+          arr = arr.sort(compare)
+          for(i = 0 ; i < arr.length; i++) {
+            var higher = getUpper(arr,arr[i]);
+            var lower = getLower(arr,arr[i]);
+            var value = higher - lower + 1 ;
+            if(value > 1) {
+              return arr[i]
+            }
+          } 
+      }
+
+      function help(nums) {
+        var array = helper(nums)
+        var array10 = get(nums)
+        for(j = 0; j < array.length; j++) {
+          if(array[j] != nums[j]) {
+            return array[j]
+          }
+        } 
+      }
+
+      function helping(nums) {
+        var r = get1(nums) 
+        var q = help(nums)
+        
+        var array = []
+        array.push(r)
+        array.push(q)
+        return array
+      }
+
+       helping([1,2,2,4])
+    </script>
+
+    <script type="xxxxx">
+      function intersection(array,array1){
+        var array2 = [];
+        for(i = 0; i < array.length; i++){
+          for(j = 0; j < array1.length; j++){
+            if(array[i] == array1[j]){
+              array2.push(array[j])
+              break;
+            }
+          }
+        }
+       if(array2.length == 1) {
+          return array2;
+        }
+        // for(u = 0; u <array2.length; u++) {
+        //   for(k = u + 1; k < array2.length; k++) {
+        //     if(array2[u] == array2[k]) {
+        //       array2.splice(u,1)
+        //       u = u -1;
+        //     }
+        //   }
+        // }
+        return array2;
+      }
+
+      intersection([2, 1],[1, 1])
+    </script>
+
+    <script type="xxxxx">
+      function help(array1,array2) {
+        var array3 = []
+        for(i = 0 ; i < array1.length; i++) {
+          for(j = 0; j < array2.length; j++) {
+            if(array1[i] == array2[j]) {
+              array3.push(array1[i])
+              array1.splice(i,1)
+              array2.splice(j,1)
+              i = i - 1;
+            }
+          }
+        }
+        return array3
+      }
+      help([2,1],[1,2])
+    </script>
+
+    <script type="xxxxx">
+      function getUpper(arr, key){
+          var low = 0, high = arr.length - 1;
+          var mid = Math.round((low + high) / 2);
+          while(low <= high){
+              
+              if(arr[mid] <= key){
+                  low = mid + 1;
+              }else{
+                  high = mid - 1;  
+              }
+              mid = Math.round((low + high) / 2);        
+          } 
+          return high; 
+      }
+       
+      function getLower(arr,key){
+          var low = 0, high = arr.length - 1;
+          var mid = Math.round((low + high) / 2);
+          while(low <= high){      
+              if(arr[mid] >= key){
+                  high = mid -1;
+              }else{
+                  low = mid + 1;
+              }
+              mid = Math.round((low + high) / 2);       
+          }    
+          return low; 
+      } 
+
+      function compare(value1,value2) {
+        if(value1 < value2) {
+          return -1
+        } else if(value1 > value2) {
+          return 1
+        } else {
+          return 0
+        }
+      }
+      
+      function get (arr) {
+          var array = []
+          arr = arr.sort(compare)
+          for(i = 0 ; i < arr.length; i++) {
+            var higher = getUpper(arr,arr[i]);
+            var lower = getLower(arr,arr[i]);
+            var value = higher - lower + 1 ;
+            if(value == 1) {
+                array.push(arr[i]);
+                return array
+            }
+          } 
+      }
+
+      get([1,1,2,3,3,4,4,8,8])
+    </script>
+
+    <script type="xxxxx">
+      function helper(s) {
+        var a = s.split(" ")
+        for(i = 0; i < a.length; i++) {
+          a[i] = a[i].split("").reverse().join("")
+        }
+        a = a.join(" ")
+        return a
+      }
+      helper("Let's take LeetCode contest")
+    </script>
+
+    <script type="xxxxx">
+      function helper(s) {
+        var a = s.trim().split(" ").reverse()
+        for(i = 0; i < a.length; i++) {
+          if(a[i] == "") {
+            a.splice(i,1)
+            i--;
+          }
+        }
+        return a.join(" ")
+      }
+      helper("   a   b ")
+    </script>
+    
+    <script type="xxxxx">
+      function helper(s) {
+        var a = parseInt( (43261596).toString(2).split("").reverse().join("").padEnd(32,"0") , 2)
+        return a
+      }
+    </script>
+
+    <script>
+        function getUpper(arr, key){
+            var low = 0, high = arr.length - 1;
+            var mid = Math.round((low + high) / 2);
+            while(low <= high){
+                
+                if(arr[mid] <= key){
+                    low = mid + 1;
+                }else{
+                    high = mid - 1;  
+                }
+                mid = Math.round((low + high) / 2);        
+            } 
+            return high; 
+        }
+         
+        function getLower(arr,key){
+            var low = 0, high = arr.length - 1;
+            var mid = Math.round((low + high) / 2);
+            while(low <= high){      
+                if(arr[mid] >= key){
+                    high = mid -1;
+                }else{
+                    low = mid + 1;
+                }
+                mid = Math.round((low + high) / 2);       
+            }    
+            return low; 
+        } 
+
+        function compare(value1,value2) {
+          if(value1 < value2) {
+            return -1
+          } else if(value1 > value2) {
+            return 1
+          } else {
+            return 0
+          }
+        }
+        
+        function get (arr) {
+            var array = []
+            arr = arr.sort(compare)
+            for(i = 0 ; i < arr.length; i++) {
+              var higher = getUpper(arr,arr[i]);
+              var lower = getLower(arr,arr[i]);
+              var value = higher - lower + 1 ;
+              if(value == 1) {
+                  array.push(arr[i]);
+                  return array
+              }
+            } 
+        }
+
+    </script>
+
+    <script type="xxxxx">
+      function helper(s) {
+        var a = s.indexOf("A")
+        var pos = []
+        while(a > -1) {
+          pos.push(a)
+          a = s.indexOf("A",a + 1)
+        }
+        return pos.length
+      }
+      
+      
+      function help(s) {
+        var c = s.indexOf("LLL")
+        var d = helper(s)
+        if(c === -1 && d <= 1 ) {
+          return true
+        } else {
+          return false
+        }
+      }
+      help("PPALLL")
+    </script>
+
+    <script type="xxxxx">
+      function getUpper(arr, key){
+          var low = 0, high = arr.length - 1;
+          var mid = Math.round((low + high) / 2);
+          while(low <= high){
+              
+              if(arr[mid] <= key){
+                  low = mid + 1;
+              }else{
+                  high = mid - 1;  
+              }
+              mid = Math.round((low + high) / 2);        
+          } 
+          return high; 
+      }
+       
+      function getLower(arr,key){
+          var low = 0, high = arr.length - 1;
+          var mid = Math.round((low + high) / 2);
+          while(low <= high){      
+              if(arr[mid] >= key){
+                  high = mid -1;
+              }else{
+                  low = mid + 1;
+              }
+              mid = Math.round((low + high) / 2);       
+          }    
+          return low; 
+      } 
+
+      function compare(value1,value2) {
+        if(value1 < value2) {
+          return -1
+        } else if(value1 > value2) {
+          return 1
+        } else {
+          return 0
+        }
+      }
+      
+      function get (arr) {
+          var array = []
+          arr = arr.sort(compare)
+          for(i = 0 ; i < arr.length; i++) {
+            var higher = getUpper(arr,arr[i]);
+            var lower = getLower(arr,arr[i]);
+            var value = higher - lower + 1 ;
+            if(value > 1) {
+                arr.splice(i,1);
+                i--
+            }
+          } 
+          return arr
+      }
+
+      get([1,1,2])
+    </script>
+
+    <script type="xxxxx">
+      function helper(array) {
+        var Max = array[0]
+        for(k = 0; k < array.length; k++) {
+          if(Max < array[k]) {
+            Max = array[k]
+          }
+        }
+        return Max
+      }
+
+      function help(array) {
+        var Max1 = helper(array)
+        for(i = 0; i < 2; i++) {
+          var Max = helper(array)
+          for(j = 0; j < array.length; j++) {
+            if(array[j] == Max) {
+              array.splice(j,1)
+              j--
+            }
+          }
+        }
+        Max = helper(array)
+        if(Max == undefined) {
+          return Max1
+        } else {
+          return Max
+        }
+      }
+
+      help([2, 2, 3, 1])
+    </script>
+
+    <script type="xxxxx">
+      function helper(nums) {
+        var sum = 0;
+        for(i = 0; i < nums.length; i++) {
+          for(j = 0; j < i; j++) {
+            sum = nums[j] + sum
+          }
+        }
+        return sum
+      }
+
+      function help(nums) {
+        var sum1 = 0;
+
+      }
+    </script>
+
+    <script type="xxxxx">
+      function helper(s) {
+        var s = s.trim().split(" ")
+        if(s == "") {
+          return 0
+        }
+        return s.length
+      }
+      helper(", , , ,        a, eaefa")
+    </script>
+
+    <script type="xxxxx">
+      var countSegments = function(s) {
+          s = "a " + s + " a";
+          return s.replace(/\s+/g, ' ').split(" ").length - 2;
+      };
+      countSegments(", , , ,        a, eaefa")
+    </script>
+
+    <script type="xxxxx">
+      var countSegments = function(s) {
+          s = s.trim();
+          return (s.length === 0 ? 0 : s.replace(/\s{2,}/g," ").split(" ").length);
+      };
+      countSegments(", , , ,        a, eaefa")
+    </script>
+
+    <script type="xxxxx">
+      function helper(array) {
+        var Min = array[0]
+        for(k = 0; k < array.length; k++) {
+          if(Min > array[k]) {
+            Min = array[k]
+          }
+        }
+        return Min
+      }
+      helper([1,2,3,4])
+    </script>
+
+    <script type="xxxxx">
+      function helper(nums,target) {
+        var a = nums.indexOf(target)
+        if(a == -1) {
+          return false
+        } else {
+          return true
+        }
+      }
+    </script>
+
+    <script type="xxxxx">
+      function compare(value1,value2) {
+        if(value1 < value2) {
+          return -1
+        } else if(value1 > value2) {
+          return 1
+        } else {
+          return 0
+        }
+      }
+      function helper(nums) {
+        var a = nums.slice()
+        var array = nums.sort(compare)
+        for(i = 0; i < nums.length; i++) {
+          if(array[i] !== a[i]) {
+            var k = i
+            break
+          }
+        }
+        for(j = nums.length - 1; j > -1; j--) {
+          if(array[j] !== a[j]) {
+            var u = j;
+            break
+          }
+        }
+        var array10 = []
+        for(f = k; f < u + 1; f++) {
+          array10.push(a[f])
+        }
+        return array10
+      }
+      helper([2, 6, 4, 8, 10, 9, 15])
+    </script>
+
+    <script type="xxxx">
+      function helper(nums) {
+        for(k = 1; k < nums.length - 2; k++) {
+          if(nums[k] == nums[k + 1]) {
+            nums.splice(k + 1,1)
+            k--
+          }
+        }
+        if(nums.length == 1) {
+          return  true
+        }
+        var count = 0
+        for(i = 0; i < nums.length; i++) {
+          for(j = i + 1; j < nums.length; j++ ){
+            if(nums[i] > nums[j] ) {
+              count = count + 1
+              break;
+            }
+          }
+        }
+        if(count == 1 || count == 0) {
+          return true
+        } else {
+          return false
+        }
+      }
+       // helper([4,2,3])
+      // helper([3,4,2,3])
+       helper([2,3,3,3,3,2,4])
+      // helper([3,3,2,2])
+       [1,2,4,5,3]
+    </script>
+
+    <script type="xxxxx">
+      function compare(value1,value2) {
+        if(value1 < value2) {
+          return -1
+        } else if(value1 > value2) {
+          return 1
+        } else {
+          return 0
+        }
+      }
+
+      function helper(nums) {
+        for(i = 0; i < nums.length; i++) {
+          var a = nums.splice(i,1)
+          if(nums.slice() == nums.sort(compare)) {
+            return true
+          }
+
+        }
+        return false
+      }
+
+      helper([1,2,4,5,3])
+    </script>
+
+    <script type="xxxxx">
+      function getUpper(arr, key){
+          var low = 0, high = arr.length - 1;
+          var mid = Math.round((low + high) / 2);
+          while(low <= high){
+              
+              if(arr[mid] <= key){
+                  low = mid + 1;
+              }else{
+                  high = mid - 1;  
+              }
+              mid = Math.round((low + high) / 2);        
+          } 
+          return high; 
+      }
+       
+      function getLower(arr,key){
+          var low = 0, high = arr.length - 1;
+          var mid = Math.round((low + high) / 2);
+          while(low <= high){      
+              if(arr[mid] >= key){
+                  high = mid -1;
+              }else{
+                  low = mid + 1;
+              }
+              mid = Math.round((low + high) / 2);       
+          }    
+          return low; 
+      } 
+
+      function compare(value1,value2) {
+        if(value1 < value2) {
+          return -1
+        } else if(value1 > value2) {
+          return 1
+        } else {
+          return 0
+        }
+      }
+      
+      function get (arr) {
+          var array = []
+          var n = arr.length / 3
+          arr = arr.sort(compare)
+          for(i = 0 ; i < arr.length; i++) {
+            var higher = getUpper(arr,arr[i]);
+            var lower = getLower(arr,arr[i]);
+            var value = higher - lower + 1 ;
+            if(value > n) {
+                array.push(arr[i])
+            }
+          }
+          for(j = 0; j < array.length; j++) {
+            if(array[j] == array[j + 1]) {
+              array.splice(j,1)
+              j--
+            }
+          } 
+          return array
+      }
+
+      get([1,1,1,3,3,2,2,2])
+    </script>
+
+    <script type="xxxxx">
+      function helper(nums1,nums2) {
+        for(i = 0; i < nums1.length; i++) {
+          for(j = 0; j < nums2.length; j++) {
+            if(nums1[i] === nums2[j]) {
+              
+            }
+          }
+        }
+      }
+    </script>
+
+    <script type="Next Greater Element I">
+      function helper(nums1,nums2) {
+        nums1 = nums1.join("")
+        nums2 = nums2.join("")
+        var array = []
+        for (i = 0; i < nums1.length; i++) {
+          array.push(nums2.indexOf(nums1[i]))
+        }
+        return array
+      }
+      function help(nums1,nums2) {
+        var array10 = []
+        var a = helper(nums1,nums2)
+        for (j = 0; j < a.length; j++) {
+          array10.push(-1)
+          for (k = a[j]; k < nums2.length; k++) {
+            if (nums2[k + 1] > nums2[a[j]]) {
+              array10.push( nums2[k + 1] )
+              array10.splice(j,1)
+              break
+            } 
+          } 
+        }
+        return array10
+      }
+      help([2,4],[1,2,3,4])
+    </script>
+
+    <script type="xxxxx">
+      function helper(letters,target) {
+        for(i = 0; i < letters.length; i++) {
+          if(letters[i] > target) {
+            return letters[i]
+          }
+        }
+      }
+      helper(["c","f","j"],"j")
+    </script>
+   
+   <script type="xxxxxx">
+    var nextGreatestLetter = function(letters, target) {
+      for(let i = 0; i < letters.length; i++){
+          if(letters[i] > target) return letters[i];
+      }
+      return letters[0];
+    };
+   </script>
+
+   <script type="xxxxxxx">
+    function helper(nums) {
+      var count = 1;
+      var array = []
+      for(j = 0; j < nums.length; j++) {
+        for(i = j; i < nums.length; i++) {
+          if(nums[j + 1] > nums[j]) {
+            count = count + 1
+            array.push(count)
+          }
+        }
+      }
+      return array
+    }
+
+    helper([1,3,5,4,7])
+   </script>
+
+   <script type="plusOne">
+        var plusOne = function(digits) {
+        for (let i = digits.length - 1; i >= 0; i--) {
+            digits[i] = (digits[i] + 1) % 10;
+            if (digits[i]) 
+              return digits;
+        }
+        digits.unshift(1);
+        return digits;
+    };
+   </script>
+
+   <script type="xxxxxxx">
+      function helper(array,n) {
+        var count = 0
+        for(i = 1; i < array.length - 1; i++) {
+          if(array[i - 1] !== 0 && array[i + 1] !== 0) {
+            array[i] = 1
+            count = count + 1
+          }
+          if(array[i - 1] !== 1 && array[i + 1] !== 1) {
+            array[i] = 0
+            count = count + 1
+          }
+        }
+        if(count >= n) {
+          return true
+        } else {
+          return false
+        }
+      }
+      
+      helper([1,0,0,0,1],2)
+   </script>
+
+   <script type="xxxxxx">
+    var canPlaceFlowers = function(flowerbed, n) {
+        if(n === 0) return true;
+        for(var i = 0; i < flowerbed.length; i++){
+            if(flowerbed[i] === 0 && flowerbed[i + 1] !== 1 && flowerbed[i - 1] !== 1){
+                flowerbed[i] = 1;
+                n--;
+            }
+            if(n === 0){
+                return true;
+            }
+        }
+        return false;
+    };
+   </script>
+
+   <script type="xxxxxxx">
+      function helper(array,n) {
+        for(i = 0; i < array.length; i++) {
+          if(array[i] == 0 && array[i - 1] !== 1 && array[i + 1] !== 1) {
+            array[i] = 1 
+            n = n - 1
+          }
+          if(n == 0) {
+            return true
+          }
+        }
+        
+        return false
+      }
+
+      helper([0,0,1,0,0],1)
+   </script>
+
+   <script type="xxxx">
+    function indexOf(ary,val) { 
+      for(i = 0; i < ary.length; i++) {
+        if(ary[i] == val) {
+          return i
+        }
+      }
+      return -1
+    }
+
+    indexOf([1,2,3],1)
+   </script>
+
+   <script type="xxxxxx">
+    function helper(ary,val) {
+      for(i = 0; i < ary.length; i++) {
+        if(ary[i] == val) {
+          return true
+        }
+      }
+      return false
+    }
+   </script>
+
+   <script type="xxxxxx">
+
+    function getUpper(arr, key){
+        var low = 0, high = arr.length - 1;
+        var mid = Math.round((low + high) / 2);
+        while(low <= high){
+            
+            if(arr[mid] <= key){
+                low = mid + 1;
+            }else{
+                high = mid - 1;  
+            }
+            mid = Math.round((low + high) / 2);        
+        } 
+        return high; 
+    }
+     
+    function getLower(arr,key){
+        var low = 0, high = arr.length - 1;
+        var mid = Math.round((low + high) / 2);
+        while(low <= high){      
+            if(arr[mid] >= key){
+                high = mid -1;
+            }else{
+                low = mid + 1;
+            }
+            mid = Math.round((low + high) / 2);       
+        }    
+        return low; 
+    } 
+
+    function compare(value1,value2) {
+      if(value1 < value2) {
+        return -1
+      } else if(value1 > value2) {
+        return 1
+      } else {
+        return 0
+      }
+    }
+    
+    // function get (arr) {
+    //     var n = arr.length / 3
+    //     arr = arr.sort(compare)
+    //     for(i = 0 ; i < arr.length; i++) {
+    //       var higher = getUpper(arr,arr[i]);
+    //       var lower = getLower(arr,arr[i]);
+    //       var value = higher - lower + 1 ;
+    //       if(value > 1) {
+    //           arr.splice(i,1)
+    //           i = i - 1
+    //       }
+    //     }
+    //     return arr
+    // }
+
+    function helper(nums,k) {
+      var nums = nums.sort(compare)
+      var a = nums.length
+      return nums[a - k]
+    }
+
+    helper([3,2,1,5,6,4],2)
+   </script>
+
+   <script type="xxxx">
+    function helper(nums,k) {
+      var array = []
+      var array1 = []
+      for (i = 0; i < nums.length; i++) {
+        for (j = i + 1; j < nums.length; j++) {
+          if (Math.abs(nums[i] - nums[j]) == k) {
+            array.push(nums[i])
+            array.push(nums[j])
+            array1.push(array)
+            array = []
+          }
+        }
+      }
+      return array1   
+    }
+
+    function help(nums,k) {
+      var nums = helper(nums,k)
+      var j = 0
+      for(i = 0; i < nums.length; i++) {
+        nums[i].sort(compare)
+      }
+      for(i = 0; i < nums.length; i++) {
+        for(u = i + 1; u < nums.length; u++) {
+          if(nums[i][j] == nums[u][j] && nums[i][j + 1] == nums[u][j + 1]) {
+            nums.splice(u,1)
+            u = u - 1
+          }
+        }
+      }
+      return nums.length
+    }
+    
+    function compare(value1,value2) {
+      if(value1 < value2) {
+        return -1
+      } else if(value1 > value2) {
+        return 1
+      } else {
+        return 0
+      }
+    }
+    help([-1,0,0,1,0,0,-1],1)
+   </script>
+
+   <script type="xxx">
+    var firstUniqChar = function(s) {
+      var map = {}
+      for(var i = 0; i < s.length; i++) {
+        if (s[i] in map) {
+          map[s[i]]++
+        } else {
+          map[s[i]] = 1
+        }
+      }
+
+      for(var i = 0; i<s.length; i++) {
+        if (map[s[i]] === 1) {
+          return i
+        }
+      }
+
+      return -1
+    }
+
+    firstUniqChar("leetcode")
+   </script>
+
+   <script type="xxx">
+     var firstUniqChar = function(s) {
+       var map = {}
+       for(var i = 0; i < s.length; i++) {
+         map[s[i]] = ~~map[s[i]] + 1
+       }
+
+       for(var i = 0; i<s.length; i++) {
+         if (map[s[i]] === 1) {
+           return i
+         }
+       }
+
+       return -1
+     }
+
+    firstUniqChar("leetcode")
+   </script>
+
+   <script type="xxx">
+     function helper(array,start,end) {
+      var array1 = array.slice()
+
+     }
+
+     helper([1,2,3],1,3)
+   </script>
+
+   <script type="xxxx">
+    function helper(s,k) {
+      s = s.split("")
+    }
+   </script>
+
+   <script type="xxxxx">
+
+    var missingNumber = function(nums) {
+        var res = nums.length;
+        
+        for(var i = 0; i < nums.length; i++){
+            res ^= i ^ nums[i];
+        }
+        
+        return res;
+    };
+   </script>
+
+   <script type="xxx">
+    // var res = 1;
+    // var a = 12;
+    // res = res ^ a
+    // console.log(res)
+    var res = 1
+    var a = 12
+    res ^= a
+    console.log(res)
+   </script>
+
+   <script type="xxxx">
+    function compare(value1,value2) {
+      if(value1 < value2) {
+        return -1
+      } else if(value1 > value2) {
+        return 1
+      } else {
+        return 0
+      }
+    }
+
+    function helper(nums) {
+      if(nums.join("") == "1") {
+        return 0
+      }
+      nums = nums.sort(compare)
+      for(i = 0; i < nums.length; i++) {
+        if((i ^ nums[i]) !== 0) {
+          return nums[i] - 1
+        }
+      }
+      return nums[nums.length - 1] + 1
+    }
+
+    helper([1])
+   </script>
+
+   <script type="xxxx">
+    function helper(nums){
+      var min = nums[0];
+      var sum = min;
+      var len = nums.length;
+      for(let i = 1; i < len; i++){
+          sum += nums[i];
+          min = nums[i] < min? nums[i]: min;
+      }
+      return sum - len * min;
+    };
+
+    helper([1,2,3])
+   </script>
+
+   <script type="xxxx">
+   // 两个正方形相连 有一个边消失  三个正方形相连 有2个边长消失 4个
+   //正方形三个边  横向的 
+   // 纵向 两个正方形相连 有一个边消失 3个正方形 2个边
+   function crosswise(nums) {
+    var count = 0
+    for(i = 0; i < nums.length; i++) {
+      for(j = 0; j < nums[i].length; j++) {
+        if(nums[i][j] == 1 && nums[i][j + 1] == 1) {
+          count  = count + 2
+        }
+      }
+    }
+    return count
+   }
+
+   function sum (nums) {
+    var counter = 0
+    for(i = 0; i < nums.length; i++) {
+      for(j = 0; j < nums[i].length; j++) {
+        if(nums[i][j] == 1) {
+          counter = counter + 1
+        }
+      }
+    }
+    return counter * 4
+   }
+
+   function lengthways(nums) {
+    var counting = 0;
+    for(i = 0; i < nums[0].length; i++) {
+      for(j = 0; j < nums.length - 1; j++) {
+        if(nums[j][i] == 1 && nums[j + 1][i] == 1) {
+          counting = counting + 2
+        }
+      }
+    }
+    return counting
+   }
+
+   function helper(nums) {
+    return sum(nums) - crosswise(nums) - lengthways(nums)
+   }
+
+   lengthways([1])
+   </script>
+
+  <script type="xx">
+    function helper(s,t) {   //I try to use in this method. but fail
+      var map = {}
+      for(i = 0; i < s.length; i++) {
+        map[s[i]] = i
+      }
+      return map
+    }
+    
+    function help(s,t) {
+      var map1 = {} 
+      for(i = 0; i < t.length; i++) {
+        map1[t[i]] = i
+      }
+    help("abcd","abcde")
+  </script>
+
+  <script type="xxx">
+    function helper(s,t) {  // I try to use includes . but fail
+      for(i = 0; i < t.length; i++) {
+        if( s.includes( t[i] ) ) {
+
+        } else {
+          return t[i]
+        }
+      }
+    }
+    helper("a","aa")
+  </script>
+
+  <script type="xxxx">
+    var firstUniqChar = function(s) {  
+      var map = {}
+      for(var i = 0; i < s.length; i++) {
+        if (s[i] in map) {
+          map[s[i]]++
+        } else {
+          map[s[i]] = 1
+        }
+      }
+
+      for(var i = 0; i<s.length; i++) {
+        if (map[s[i]] === 1) {
+          return i
+        }
+      }
+
+      return -1
+    }
+
+    firstUniqChar("LeetCode")
+  </script>
+
+  <script type="xxx">
+    function gets(s,t) {
+      var map = {}
+      for(i = 0; i < s.length; i++) {
+        if(s[i] in map) {
+          map[s[i]]++
+        } else {
+          map[s[i]] = 1
+        }
+      }
+      return map
+    }
+
+    function gett(s,t) {
+      var map = {}
+      for(i = 0; i < t.length; i++) {
+        if(t[i] in map) {
+          map[t[i]]++
+        } else {
+          map[t[i]] = 1
+        }
+      }
+      return map
+    }
+
+    function helper(s,t) {
+      var maps = gets(s,t)
+      var mapt = gett(s,t)
+      for(i = 0; i < t.length; i++) {
+        if( maps[t[i]] == undefined) {
+          return t[i]
+        }
+        if( maps[t[i]] !== mapt[t[i]] ) {
+          return t[i]
+        }
+      }
+    }
+    helper("abcd","abcde")
+  </script>
+
+  <script type="xxx">
+    function helper(s) {
+      var s = s.toLowerCase()
+      var sum = 0;
+      for(i = 0; i < s.length; i++) {
+        var k = s[i].charCodeAt() - 96
+        var f = s.length - (i + 1)
+        var u = Math.pow(26,f)
+        sum = (k*u) + sum
+      }
+      return sum
+    }
+    helper("AB")
+  </script>
+
+  <script type="important">
+    var a = '0ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        a = a.split('');
+    var convertToTitle = function(n) {
+        if(n < 27) {
+            return a[n];
+        } else {
+            var temp = Math.ceil(n / 26)-1;
+            return convertToTitle(temp) + convertToTitle(n - temp*26);
+        }
+    };
+    convertToTitle(28)
+  </script>
+
+  <script type="xxx"> 
+     function binary_search(arr, key) {
+        var low = 0,
+            high = arr.length - 1;
+
+        while(low <= high) {
+            var mid = parseInt((high + low) /2);
+            if(key == arr[mid]) {
+                return mid;
+            } else if(key > arr[mid]) {
+                low = mid + 1;
+            } else if(key < arr[mid]) {
+                high = mid -1;
+            } else {
+                return -1;
+            }
+        }
+    }
+
+    binary_search([1,2,3,4,5,6,7,8,9,10],4)
+  </script>
+
+  <script type="xxx">
+    function helper(arr,key) {
+      var low = 0
+      var high = arr.length - 1
+
+      while(low <= high) {
+        var mid = parseInt( (low + high) / 2)
+        if(key == arr[mid]) {
+          return mid
+        } else if( key >= arr[mid] ) {
+          low = mid + 1
+        } else if( key <= arr[mid] ) {
+          high = mid - 1
+        } else {
+          return -1
+        }
+      }
+    }
+  </script>
+
+  <script type="xxxx">
+    function helper(matrix,target) {
+      for(i = 0; i < matrix.length; i++) {
+        if(target <= matrix[i][0]) {
+          var array = matrix[i - 1]
+          return array   
+        }
+      }
+    }
+    function help(matrix,target) {
+      var array = helper(matrix,target)
+      var low = 0
+      var high = array.length - 1
+      while(low <= high) {
+        var mid = parseInt( (low + high) / 2 )
+        if(target == array[mid]) {
+          return true
+        } else if(target >= array[mid]) {
+          low = mid + 1
+        } else if(target <= array[mid]) {
+          high = mid - 1
+        } 
+      }
+      return false
+    }
+      helper( [ [] ] , 0)
+  </script>
+
+    <script type="Search a 2D Matrix">
+        var searchMatrix = function(matrix, target) {
+            function helper(matrix,target) {
+              if(matrix.join("") == "") {
+                var array = []
+                return array
+              }
+              if(matrix.length == 1) {
+                return matrix[0]
+              }
+              for(i = 0; i < matrix.length; i++) {
+                if(target == matrix[i][0]) {
+                  var array = matrix[i]
+                  return array
+                }
+                if(target < matrix[i][0]) {
+                  var array = matrix[i - 1]
+                  return array   
+                }
+              }
+              return matrix[matrix.length - 1]
+            }
+            function help(matrix,target) {
+              var array = helper(matrix,target)
+              var low = 0
+              if(array == undefined) {
+                return false
+              }
+              var high = array.length - 1
+              while(low <= high) {
+                var mid = parseInt( (low + high) / 2 )
+                if(target == array[mid]) {
+                  return true
+                } else if(target >= array[mid]) {
+                  low = mid + 1
+                } else if(target <= array[mid]) {
+                  high = mid - 1
+                } 
+              }
+              return false
+            }
+            
+            return help(matrix,target)
+        };
+
+      searchMatrix([[1,3,5,7],[10,11,16,20],[23,30,34,50]],30)
+    </script>
+
+    <script type="xxxx">
+          function getUpper(arr, key){
+                var low = 0, high = arr.length - 1;
+                var mid = Math.round((low + high) / 2);
+                while(low <= high){
+                    
+                    if(arr[mid] <= key){
+                        low = mid + 1;
+                    }else{
+                        high = mid - 1;  
+                    }
+                    mid = Math.round((low + high) / 2);        
+                } 
+                return high; 
+            }
+             
+            function getLower(arr,key){
+                var low = 0, high = arr.length - 1;
+                var mid = Math.round((low + high) / 2);
+                while(low <= high){      
+                    if(arr[mid] >= key){
+                        high = mid -1;
+                    }else{
+                        low = mid + 1;
+                    }
+                    mid = Math.round((low + high) / 2);       
+                }    
+                return low; 
+            } 
+
+            function compare(value1,value2) {
+              if(value1 < value2) {
+                return -1
+              } else if(value1 > value2) {
+                return 1
+              } else {
+                return 0
+              }
+            }
+            
+            function get (arr) {
+                arr = arr.sort(compare)
+                for(i = 0 ; i < arr.length; i++) {
+                  var higher = getUpper(arr,arr[i]);
+                  var lower = getLower(arr,arr[i]);
+                  var value = higher - lower + 1 ;
+                  if(value > 1) {
+                      arr.splice(i,1);
+                      i--
+                  }
+                } 
+                return arr
+            }
+          
+          getUpper([1,1,1,2,2,3,3,4,4,5,6] , 1)
+
+
+    </script>
+
+    <script>
+         function binary_search(arr, key) {
+            var low = 0,
+                high = arr.length - 1;
+
+            while(low <= high) {
+                var mid = parseInt((high + low) /2);
+                if(key <= arr[mid]) {
+                    high = mid - 1
+                } else {
+                  low = mid + 1
+                }
+            }
+            return low
+        }
+
+        binary_search([1,1,1,1,2,3,4,5,6,7,8,9,10],1)
+    </script>
