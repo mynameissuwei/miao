@@ -6,5 +6,8 @@ var mynameissuwei = {
     }
     return array1
   },
+  compact: function compact(array) {
+    return array.filter(x => x)
+  },
 
 }
