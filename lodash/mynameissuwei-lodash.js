@@ -1,9 +1,7 @@
 var mynameissuwei = function() {
   function chunk (array, size = 1) {
     var array1 = []
-    for (var i = array.length; i > size; i--) {
-      array1.push(array.splice(i, 1))
-    }
+    array1.push(array.slice(0,size),array.slice(size))
     return array1
   }
 
@@ -66,6 +64,37 @@ var mynameissuwei = function() {
 
     return result
   }
+
+  function indexOf(array,value,fromindex = 0) {
+    if(fromindex < 0)  fromindex = fromindex + array.length 
+    for(i = fromindex; i < array.length; i++) {
+      if(array[i] == value) {
+        return  i
+      }
+    }
+    return -1 
+  }
+
+  function isArray(arr) {
+    return Object.prototype.toString.call(arr) == "[object Array]" 
+  }
+
+  function isDate(value) {
+    return Object.prototype.toString.call(value) == "[object Date]" 
+  }
+
+  function isBoolean(value) {
+    return Object.prototype.toString.call(value) == "[object Boolean]" 
+  }
+
+  function isString(value) {
+    return Object.prototype.toString.call(value) == "[object String]" 
+  }
+
+  function isNumber(value) {
+    return Object.prototype.toString.call(value) == "[object Number   ]"
+  }
+
   return {
     chunk:chunk,
     compact:compact,
@@ -75,5 +104,11 @@ var mynameissuwei = function() {
     filter:filter,
     map:map,
     flatten:flatten,
+    indexOf:indexOf,
+    isArray:isArray,
+    isDate:isDate,
+    isBoolean:isBoolean,
+    isString:isString,
+    isNumber:isNumber,
   }
 }()
