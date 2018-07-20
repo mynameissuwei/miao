@@ -1,4 +1,7 @@
-var mynameissuwei = function() {
+var mynameissuwei = functxdion() {
+
+  // purpose ! you need to know how to use these function
+  
   function chunk (array, size = 1) {
     var array1 = []
     array1.push(array.slice(0,size),array.slice(size))
@@ -92,7 +95,63 @@ var mynameissuwei = function() {
   }
 
   function isNumber(value) {
-    return Object.prototype.toString.call(value) == "[object Number   ]"
+    return Object.prototype.toString.call(value) == "[object Number]"
+  }
+
+  function isUndefined(value) {
+    return Object.prototype.toString.call(value) == "[object Undefined]"
+  }
+
+  function drop(arr,n = 1) {
+    return arr.slice(n)
+  }
+
+  function dropRight(array,n = 1) {
+    var len = array.length - n
+    if(len <= 0) {
+      len = 0
+    }
+    array.splice(len,n)
+    return array
+  }
+
+  function fill(array,value,start = 0,end = array.length) {
+    for(i = start; i < end; i++) {
+      array[i] = value
+    }
+    return array          
+  }
+
+  function isInteger(value) {
+    return Number.isInteger(value)
+  }
+
+  function isRegExp(value) {
+    return Object.prototype.toString.call(value) == "[object Array]"
+  }
+
+  //isNaN(undefined) == true . delete this situation
+  function isNaN(value) {
+    return Object.prototype.toString.call(value) == "[object Number]" && isNaN(value)
+  }
+
+  function isNull(value) {
+    return Object.prototype.toString.call(value) == "[object Null]"
+  }
+
+  //Checks if value is null or undefined
+  function isNil(value) {
+    return Object.prototype.toString.call(value) == "[object Null]" || Object.prototype.toString.call(value) == "[object Undefined]"
+  }
+
+  //null也属于object 判断该值不是Null 但是object
+  function isObjectLike(value) {
+    return Object.prototype.toString.call(value) !== "[object Null]" && typeof value == "object"
+  }
+
+  //isSafeInteger 判断该数为整数而且在最大整数和最小整数之间
+  function isSafeInteger(value) {
+    return isInteger(value) && value <= Number.MAX_SAFE_INTEGE && value >= Number.MIN_SAFE_INTEGE
   }
 
   return {
@@ -110,5 +169,15 @@ var mynameissuwei = function() {
     isBoolean:isBoolean,
     isString:isString,
     isNumber:isNumber,
+    drop:drop,
+    dropRight:dropRight,
+    fill:fill,
+    isInteger:isInteger,
+    isUndefined:isUndefined,
+    isRegExp:isRegExp,
+    isNaN:isNaN,
+    isNull:isNull,
+    isObjectLike:isObjectLike,
+    isSafeInteger:isSafeInteger,
   }
 }()
