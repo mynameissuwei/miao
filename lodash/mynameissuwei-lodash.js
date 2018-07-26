@@ -49,20 +49,19 @@ var mynameissuwei = function(){
     }, [])
   }
 
-  function flatten(ary) {
-    var result = []
+  function flatten(ary){
+    return [].concat(...ary)
+  }
 
-    for(var i = 0; i<ary.length; i++) {
-      if (!Array.isArray(ary[i])) {
-        result.push(ary[i])
-      } else {
-        for(var j = 0;j<ary[i].length;j++) {
-          result.push(ary[i][j])
-        }
-      }
-    }
+  function flattenDepth(array,depth) {
+   for(i = 0; i < depth; i++) {
+     array  = flatten(array)
+   }
+   return array
+  }
 
-    return result
+  function flattenDeep(arr) {
+     return arr.toString("").split(",").map(it => Number(it))
   }
 
   function indexOf(array,value,fromindex = 0) {
@@ -151,6 +150,23 @@ var mynameissuwei = function(){
     return isInteger(value) && value <= Number.MAX_SAFE_INTEGE && value >= Number.MIN_SAFE_INTEGE
   }
 
+  function fromPairs(array) {
+    var array = flatten(array)
+    var  map = {}
+    for(i = 0; i < array.length; i = i + 2) {
+      map[array[i]] = array[i + 1]
+    }
+    return map
+  }
+
+  function head(array) {
+    return array[0]
+  }
+
+  function last(array) {
+    return array[array.length - 1]
+  }
+
   return {
     chunk:chunk,
     compact:compact,
@@ -159,7 +175,6 @@ var mynameissuwei = function(){
     slice:slice,
     filter:filter,
     map:map,
-    flatten:flatten,
     indexOf:indexOf,
     isArray:isArray,
     isDate:isDate,
@@ -176,5 +191,11 @@ var mynameissuwei = function(){
     isNull:isNull,
     isObjectLike:isObjectLike,
     isSafeInteger:isSafeInteger,
+    flattenDepth:flattenDepth,
+    flattenDeep:flattenDeep,
+    flatten:flatten,
+    fromPairs:fromPairs,
+    head:head,
+    last:last,
   }
 }()
