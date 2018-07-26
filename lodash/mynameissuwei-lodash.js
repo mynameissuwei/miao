@@ -1,7 +1,4 @@
-var mynameissuwei = functxdion() {
-
-  // purpose ! you need to know how to use these function
-  
+var mynameissuwei = function(){
   function chunk (array, size = 1) {
     var array1 = []
     array1.push(array.slice(0,size),array.slice(size))
@@ -31,7 +28,7 @@ var mynameissuwei = functxdion() {
   function slice (array,start = 0, end = array.length - 1) {
     var res = []
     for(start = 0; start <= end; start++) {
-      res.push(array[start])
+    res.push(array[start])
     }
     return res
   }
