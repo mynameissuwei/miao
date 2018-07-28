@@ -167,6 +167,48 @@ var mynameissuwei = function(){
     return array[array.length - 1]
   }
 
+  function unary(f) {
+    return function(value) {
+      return f(value)
+    }
+  }
+
+  function identity(v) {
+    return v
+  }
+
+  function lt(value1,value2) {
+    if(value1 < value2) return true
+      else return false
+  }
+
+  function lte(value1,value2) {
+    if(value1 <= value2) return true
+      else return false
+  }
+    
+  function toArray(value) {
+    if( !isNil(value) && isArrayLike (value) || isObjectLike (value )) return Object.values(value)
+      else return []
+   }   
+
+  function isArrayLike(value) {
+    if (value.hasOwnProperty('length') && typeof value  !== 'function')  return  true
+     else  return false
+  }
+  
+  function toFinite(value) {
+   if(value == Number.MIN_VALUE) {
+     return 5e-324
+   } 
+   if(value == Infinity) {
+     return 1.7976931348623157e+308
+   } if(value == null) {
+     return 1.7976931348623157e+308
+   } else {
+     return Number(value )
+   }
+
   return {
     chunk:chunk,
     compact:compact,
@@ -197,5 +239,12 @@ var mynameissuwei = function(){
     fromPairs:fromPairs,
     head:head,
     last:last,
+    unary:unary,
+    identity:identity,
+    lt:lt,
+    lte:lte,
+    toArray:toArray,
+    isArrayLike:isArrayLike,
+    toFinite:toFinite,
   }
 }()
