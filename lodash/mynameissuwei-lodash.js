@@ -197,17 +197,12 @@ var mynameissuwei = function(){
      else  return false
   }
   
-  function toFinite(value) {
-   if(value == Number.MIN_VALUE) {
-     return 5e-324
-   } 
-   if(value == Infinity) {
-     return 1.7976931348623157e+308
-   } if(value == null) {
-     return 1.7976931348623157e+308
-   } else {
-     return Number(value )
-   }
+ function toFinite(value) {
+    if (value === Infinity) return Number.MAX_VALUE
+    if (value === -Infinity) return Number.MIN_VALUE
+    let result = Number(value)
+    return isNaN(result) ? 0 : result
+    }
 
   return {
     chunk:chunk,
