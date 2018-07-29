@@ -202,7 +202,7 @@ var mynameissuwei = function(){
     if (value === -Infinity) return Number.MIN_VALUE
     let result = Number(value)
     return isNaN(result) ? 0 : result
-    }
+  }
 
   return {
     chunk:chunk,
