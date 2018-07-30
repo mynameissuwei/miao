@@ -204,6 +204,28 @@ var mynameissuwei = function(){
     return isNaN(result) ? 0 : result
   }
 
+ function isArguments(value) {
+     return Object.prototype.toString.call(value) === '[object Arguments]'
+ }
+
+ function isArrayBuffer(value) {
+     return Object.prototype.toString.call(value) === '[object ArrayBuffer]'
+ }
+
+ function gt(value,other) {
+  if(value > other) return true
+    else return false
+ }
+
+ function gte(value,other) {
+  if(value >= other) return true
+    else return false
+ }
+
+ function eq(value,other) {
+   return Object.is(value,other)
+ }
+
   return {
     chunk:chunk,
     compact:compact,
@@ -241,5 +263,9 @@ var mynameissuwei = function(){
     toArray:toArray,
     isArrayLike:isArrayLike,
     toFinite:toFinite,
+    isArguments:isArguments,
+    isArrayBuffer:isArrayBuffer,
+    gt:gt,
+    eq:eq,
   }
 }()
