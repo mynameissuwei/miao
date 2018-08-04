@@ -291,10 +291,50 @@ var mynameissuwei = function(){
 
  function max(array) {
    if(!array.length) return undefined
-     else return Math.max(...array)
+     else return array.reduce((initialValue,item) => initialValue = item > initialValue ? item : initialValue  ,initialValue = -Infinity)
  }
 
- function 
+ function mean(array) {
+  var len = array.length
+  var sum = 0
+  for(i = 0; i < array.length; i++) {
+    sum = array[i] + sum
+  }
+  return sum / len
+ }
+
+ function min(array) {
+   if(!array.length) return undefined
+     else return array.reduce((initialValue,item) => initialValue = item < initialValue ? item : initialValue  ,initialValue = Infinity)
+ }
+
+ function multiply(multiplier, multiplicand) {
+  retrun multiplier * multiplicand
+ }
+
+ function round(number, precision = 0) {
+   var digit = Math.pow(10, precision)
+   return Math.round(number * digit) / digit
+ }
+
+ function ceil(number,precision = 0) {
+  var digit = Math.pow(10,precision)
+  return Math.ceil(number * digit) / digit
+ }
+
+ function floor(number,precision = 0) {
+  var digit = Math.pow(10,precision)
+  return Math.floor(number * digit) / digit
+ }
+
+ function subtract(minuend, subtrahend) {
+  retrun minuend * subtrahend
+ }
+
+ function sum(array) {
+  return array.reduce((initialValue,item) => initialValue = initialValue + item , initialValue = 0)
+ }
+
 
   return {
     chunk:chunk,
@@ -338,18 +378,28 @@ var mynameissuwei = function(){
     gt:gt,
     eq:eq,
     gte:gte,
-    isArrayLikeObject,
-    isElement,
-    isError,
-    isFinite,
-    isLength,
-    isMap,
-    isObject,
-    isNative,
-    isSet,
-    isSymbol,
-    toNumber,
-    add,
-    max,
+    isArrayLikeObject:isArrayLikeObject,
+    isElement:isElement,
+    isError:isError,
+    isFinite:isFinite,
+    isLength:isLength,
+    isMap:isMap,
+    isObject:isObject,
+    isNative:isNative,
+    isSet:isSet,
+    isSymbol:isSymbol,
+    toNumber:toNumber,
+    add:add,
+    divide:divide,
+    max:max,
+    mean:mean,
+    min:min,
+    multiply:multiply,
+    round:round,
+    ceil:ceil,
+    floor:floor,
+    isWeakSet:isWeakSet,
+    isWeakMap:isWeakMap,
+    sum:sum,
   }
 }()
