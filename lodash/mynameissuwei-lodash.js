@@ -274,7 +274,7 @@ var mynameissuwei = function(){
  }
 
  function isWeakSet(value) {
-  return Object.prototype.toString.call(value) = '[object WeakSet]'
+  return Object.prototype.toString.call(value) == '[object WeakSet]'
  }
 
  function toNumber(value) {
@@ -293,6 +293,8 @@ var mynameissuwei = function(){
    if(!array.length) return undefined
      else return Math.max(...array)
  }
+
+ function 
 
   return {
     chunk:chunk,
