@@ -85,7 +85,8 @@ var mynameissuwei = function(){
   function isBoolean(value) {
     return Object.prototype.toString.call(value) == "[object Boolean]" 
   }
-
+  
+  //Checks if value is classified as a String primitive or object.
   function isString(value) {
     return Object.prototype.toString.call(value) == "[object String]" 
   }
@@ -123,12 +124,13 @@ var mynameissuwei = function(){
   }
 
   function isRegExp(value) {
-    return Object.prototype.toString.call(value) == "[object Array]"
+    return Object.prototype.toString.call(value) == "[object RegExp]"
   }
 
   //isNaN(undefined) == true . delete this situation
   function isNaN(value) {
-    return Object.prototype.toString.call(value) == "[object Number]" && isNaN(value)
+      if (value == undefined)return false
+      return Number.isNaN(Number(value))
   }
 
   function isNull(value) {
@@ -147,7 +149,7 @@ var mynameissuwei = function(){
 
   //isSafeInteger 判断该数为整数而且在最大整数和最小整数之间
   function isSafeInteger(value) {
-    return isInteger(value) && value <= Number.MAX_SAFE_INTEGE && value >= Number.MIN_SAFE_INTEGE
+    return Number.isSafeInteger(value)
   }
 
   function fromPairs(array) {
@@ -226,6 +228,72 @@ var mynameissuwei = function(){
    return Object.is(value,other)
  }
 
+ function isArrayLikeObject(value) {
+  return isArrayLike(value) && isObjectLike(value)
+ }
+
+ function isElement(value) {
+  return value instanceof Element
+ }
+
+ function isError(value) {
+  return value instanceof Error
+ }
+
+ function isFinite(value) {
+  return Number.isFinite(value)
+ }
+
+ function isLength(value) {
+  return Number.isSafeInteger(value) && value >= 0
+ }
+
+ function isMap(value) {
+  return Object.prototype.toString.call(value) == '[object Map]'
+ }
+
+ function isObject(value) {
+  return value !== null && typeof value == 'object' || typeof value == 'function'
+ }
+
+ function isNative(value) {
+  return value.toString().includes('[native code]')
+ }
+
+ function isSet(value) {
+  return Object.prototype.toString.call(value) == '[object Set]'
+ }
+
+ //Checks if value is classified as a Symbol primitive or object.
+ function isSymbol(value) {
+  return Object.prototype.toString.call(value) == '[object Symbol]' || typeof value == 'object'
+ }
+
+ function isWeakMap(value) {
+  return Object.prototype.toString.call(value) == '[object WeakMap]'
+ }
+
+ function isWeakSet(value) {
+  return Object.prototype.toString.call(value) = '[object WeakSet]'
+ }
+
+ function toNumber(value) {
+  return Number(value)
+ }
+
+ function add(a,b) {
+  return a + b
+ }
+
+ function divide(a,b) {
+  return a / b
+ }
+
+ function max(array) {
+   if(!array.length) return undefined
+     else return Math.max(...array)
+ }
+
   return {
     chunk:chunk,
     compact:compact,
@@ -267,5 +335,19 @@ var mynameissuwei = function(){
     isArrayBuffer:isArrayBuffer,
     gt:gt,
     eq:eq,
+    gte:gte,
+    isArrayLikeObject,
+    isElement,
+    isError,
+    isFinite,
+    isLength,
+    isMap,
+    isObject,
+    isNative,
+    isSet,
+    isSymbol,
+    toNumber,
+    add,
+    max,
   }
 }()
