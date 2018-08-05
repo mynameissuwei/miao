@@ -309,7 +309,7 @@ var mynameissuwei = function(){
  }
 
  function multiply(multiplier, multiplicand) {
-  retrun multiplier * multiplicand
+  return multiplier * multiplicand
  }
 
  function round(number, precision = 0) {
@@ -328,14 +328,144 @@ var mynameissuwei = function(){
  }
 
  function subtract(minuend, subtrahend) {
-  retrun minuend * subtrahend
+  return minuend * subtrahend
  }
 
  function sum(array) {
   return array.reduce((initialValue,item) => initialValue = initialValue + item , initialValue = 0)
  }
 
+ function join(array,char) {
+   var char = char.toString()
+   var result = array[0] || ""
+   var len = array.length
+   for(i = 1; i < array.length; i++) {
+     result = result + (char + array[i])
+   }
+   return result
+ }
 
+ function lastIndexOf(array,value,fromindex = array.length - 1) {
+  for(i = fromindex; i >= 0; i--) {
+   if(array[i] == value) {
+      return i
+    }
+  }
+  return -1
+ }
+
+ function nth(array,n = 0) {
+  if(n >= 0) {
+    return array[n]
+  }
+  if(n < 0) {
+    return array[array.length + n]
+  }
+ }
+
+ function pull(array,...values) {
+   for(i = 0; i < array.length; i++) {
+     if(values.includes(array[i])) {
+       array.splice(i,1)
+       i--
+     }
+   }
+   return array
+ }
+
+ function pullAll(array,values) {
+   for(i = 0; i < array.length; i++) {
+     if(values.includes(array[i])) {
+       array.splice(i,1)
+       i--
+     }
+   }
+   return array
+ }
+
+ // function sortedIndex(array,value) {
+ //  if(value < array[0]) {
+ //    return 0
+ //  }
+ //  for(i = 0 ; i < array.length - 1; i++) {
+ //    if( array[i] < value && value <= array[i + 1]) return array[i + 1]
+ //  }
+ // }
+
+ function sortedIndex(array,value) {
+   var low = 0 
+   var high = array.length - 1
+   while(low <= high) {
+     var mid = Math.floor ( (low + high) / 2 )
+     if(array[mid] < value) {
+       low = mid + 1
+     } else {
+       high = mid - 1
+     } 
+   }
+   return low
+ }
+
+ function sortedIndexOf(array,value) {
+   var index = sortedIndex(array,value)
+   return array[index] == value ? index : -1
+ }
+
+ function sortedLastIndex(array,value) {
+   var low = 0
+   var high = array.length - 1
+   while(low <= high) {
+     var mid =  Math.round((low + high) / 2)
+     if(array[mid] <= value) {
+       low = mid + 1
+     } else {
+       high = mid - 1
+     }
+   }
+   return high + 1
+ }
+
+ function sortedLastIndexOf(array,value) {
+  return sortedLastIndex(array,value) - 1
+ }
+
+ function sortedUniq(array) {
+  return Array.from(new Set(array))
+ }
+
+ function tail(array) {
+  return array.slice(1)
+ }
+
+ function take(array,n = 1) {
+   return array.slice(0,n)
+ }
+
+ function takeRight(array, n = 1) {
+   var ary = []
+   for(i = 0; i < n; i++) {
+     ary.push(array[array.length - (i + 1)])
+   }
+   ary.sort((a,b) => a - b)
+   return ary.filter(item => item !== undefined)
+ }
+
+ function union(...array) {
+   return uniq(flatten(array))
+ }
+
+ function uniq(array) {
+  return Array.from(new Set(array))
+ }
+
+ //Creates an array excluding all given values using SameValueZero for equality comparisons.
+ function without(array,...value) {
+   var ary = []
+   array.forEach(it => {if(!value.includes(it))  ary.push(it)})
+   return ary
+ }
+
+            
   return {
     chunk:chunk,
     compact:compact,
@@ -401,5 +531,21 @@ var mynameissuwei = function(){
     isWeakSet:isWeakSet,
     isWeakMap:isWeakMap,
     sum:sum,
+    join:join,
+    lastIndexOf:lastIndexOf,
+    nth:nth,
+    pull:pull,
+    pullAll:pullAll,
+    sortedIndex:sortedIndex,
+    sortedIndexOf:sortedIndexOf,
+    sortedLastIndex:sortedLastIndex,
+    sortedLastIndexOf:sortedLastIndexOf,
+    sortedUniq:sortedUniq,
+    tail:tail,
+    take:take,
+    takeRight:takeRight,
+    union:union,
+    uniq:uniq,
+    without:without,
   }
 }()
